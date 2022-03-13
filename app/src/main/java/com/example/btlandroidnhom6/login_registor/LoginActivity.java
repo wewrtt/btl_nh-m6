@@ -1,8 +1,10 @@
-package com.example.btlandroidnhom6;
+package com.example.btlandroidnhom6.login_registor;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.btlandroidnhom6.R;
 
 public class LoginActivity extends AppCompatActivity {
 

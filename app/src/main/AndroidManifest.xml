@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BtlAndroidNhom6">
-
+        <activity
+            android:name=".welcome.Test_Screem"
+            android:exported="false" />
         <!-- <activity -->
         <!-- android:name=".thuc_hanh.Caculator" -->
         <!-- android:exported="true" > -->
@@ -19,7 +21,7 @@
         <!-- </intent-filter> -->
         <!-- </activity> -->
         <activity
-            android:name=".LoginActivity"
+            android:name=".login_registor.LoginActivity"
             android:exported="false" />
         <activity
             android:name=".welcome.Welcom2"
