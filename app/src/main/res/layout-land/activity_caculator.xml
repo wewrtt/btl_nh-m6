@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".thuc_hanh.Caculator">
+
+  <Button
+      android:id="@+id/btnMul"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:backgroundTint="#FF5722"
+      android:text="Nhân"
+      android:textColor="#3F51B5"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.614"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0.57" />
+
+  <TextView
+      android:id="@+id/textView"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="60dp"
+      android:text="Trịnh Thành Long - B18DCAT151"
+      android:textColor="#3F51B5"
+      android:textSize="20dp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.525"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+  <TextView
+      android:id="@+id/txtA"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="40dp"
+      android:layout_marginTop="136dp"
+      android:text="Số A:"
+      android:textColor="#3F51B5"
+      android:textSize="20dp"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+  <TextView
+      android:id="@+id/txtB"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="40dp"
+      android:layout_marginTop="228dp"
+      android:text="Số B:"
+      android:textColor="#3F51B5"
+      android:textSize="20dp"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+  <EditText
+      android:id="@+id/edtA"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:backgroundTint="#FF5722"
+      android:ems="10"
+      android:hint="."
+      android:minHeight="48dp"
+      android:textSize="20dp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.224"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0.341" />
+
+  <EditText
+      android:id="@+id/edtB"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:backgroundTint="#FF5722"
+      android:ems="10"
+      android:hint="."
+      android:minHeight="48dp"
+      android:textSize="20dp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.224"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0.586" />
+
+  <Button
+      android:id="@+id/btnAdd"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:backgroundTint="#FF5722"
+      android:text="Cộng"
+      android:textColor="#3F51B5"
+
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.613"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0.341" />
+
+  <Button
+      android:id="@+id/btnSub"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:backgroundTint="#FF5722"
+      android:text="Trừ"
+      android:textColor="#3F51B5"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.824"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0.341" />
+
+  <Button
+      android:id="@+id/btnDivision"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:backgroundTint="#FF5722"
+      android:text="Chia"
+      android:textColor="#3F51B5"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.835"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0.586" />
+
+  <TextView
+      android:id="@+id/txtRes"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:hint="_______________________"
+      android:backgroundTint="#FF5722"
+      android:textColor="#FF5722"
+      android:textSize="20dp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.527"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0.817" />
+
+  <TextView
+      android:id="@+id/textView6"
+      android:textSize="20dp"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:backgroundTint="#FF5722"
+      android:text="kết quả"
+      android:textColor="#3F51B5"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.167"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0.818" />
+</androidx.constraintlayout.widget.ConstraintLayout>
