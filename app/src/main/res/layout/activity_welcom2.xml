@@ -39,7 +39,7 @@
             android:id="@+id/button"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:background="@drawable/custom_button"
+            android:background="@drawable/custom_button1"
             android:text="Next"
             android:textColor="@color/white"
             android:textSize="20dp"

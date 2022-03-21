@@ -3,17 +3,30 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/btlAndroidNhom4/app/src/main/res/drawable/botron.xml" value="0.122" />
         <entry key="..\:/btlAndroidNhom4/app/src/main/res/drawable/custom_button.xml" value="0.123" />
         <entry key="..\:/btlAndroidNhom4/app/src/main/res/drawable/custom_button_login.xml" value="0.1" />
+        <entry key="..\:/btlAndroidNhom4/app/src/main/res/drawable/custom_textview.xml" value="0.193" />
+        <entry key="..\:/btlAndroidNhom4/app/src/main/res/drawable/ic_baseline_arrow_back_24.xml" value="0.122" />
+        <entry key="..\:/btlAndroidNhom4/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.122" />
+        <entry key="..\:/btlAndroidNhom4/app/src/main/res/drawable/ic_launcher_background.xml" value="0.122" />
+        <entry key="..\:/btlAndroidNhom4/app/src/main/res/drawable/vongtrong_background.xml" value="0.122" />
         <entry key="..\:/btlAndroidNhom4/app/src/main/res/layout-land/activity_caculator.xml" value="0.2" />
         <entry key="..\:/btlAndroidNhom4/app/src/main/res/layout/activity_caculator.xml" value="0.22" />
-        <entry key="..\:/btlAndroidNhom4/app/src/main/res/layout/activity_login.xml" value="0.1" />
-        <entry key="..\:/btlAndroidNhom4/app/src/main/res/layout/activity_main.xml" value="0.17074275362318841" />
+        <entry key="..\:/btlAndroidNhom4/app/src/main/res/layout/activity_create_store.xml" value="0.25" />
+        <entry key="..\:/btlAndroidNhom4/app/src/main/res/layout/activity_home_store.xml" value="0.25" />
+        <entry key="..\:/btlAndroidNhom4/app/src/main/res/layout/activity_login.xml" value="0.33" />
+        <entry key="..\:/btlAndroidNhom4/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/btlAndroidNhom4/app/src/main/res/layout/activity_profile_home.xml" value="0.21" />
+        <entry key="..\:/btlAndroidNhom4/app/src/main/res/layout/activity_registor.xml" value="0.33" />
         <entry key="..\:/btlAndroidNhom4/app/src/main/res/layout/activity_test_screem.xml" value="0.18" />
         <entry key="..\:/btlAndroidNhom4/app/src/main/res/layout/activity_weclcome3.xml" value="0.17074275362318841" />
         <entry key="..\:/btlAndroidNhom4/app/src/main/res/layout/activity_welcom2.xml" value="0.18" />
+        <entry key="..\:/btlAndroidNhom4/app/src/main/res/layout/cuahang.xml" value="0.25" />
         <entry key="..\:/btlAndroidNhom4/app/src/main/res/layout/iteam_photo.xml" value="0.17074275362318841" />
+        <entry key="..\:/btlAndroidNhom4/app/src/main/res/layout/layout_item_rows.xml" value="0.17074275362318841" />
         <entry key="..\:/btlAndroidNhom4/app/src/main/res/layout/welcome.xml" value="0.25" />
+        <entry key="..\:/btlAndroidNhom4/app/src/main/res/menu/menu_home.xml" value="0.20416666666666666" />
         <entry key="..\:/btlAndroidNhom6/app/src/main/res/layout/activity_main.xml" value="0.17074275362318841" />
       </map>
     </option>

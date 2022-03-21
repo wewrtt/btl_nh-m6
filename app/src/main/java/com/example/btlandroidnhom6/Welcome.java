@@ -4,10 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.btlandroidnhom6.welcome.Test_Screem;
+import com.example.btlandroidnhom6.Home.MainActivity;
+import com.example.btlandroidnhom6.login_registor.Registor;
+import com.example.btlandroidnhom6.store.StoreHome;
 import com.example.btlandroidnhom6.welcome.Welcom2;
 
 public class Welcome extends AppCompatActivity {
@@ -31,7 +34,8 @@ public class Welcome extends AppCompatActivity {
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i= new Intent(Welcome.this, Test_Screem.class);
+                Log.e("registor","here");
+                Intent i= new Intent(Welcome.this, MainActivity.class);
                 startActivity(i);
             }
         });

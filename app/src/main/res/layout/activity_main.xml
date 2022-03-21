@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Home.MainActivity"
+    android:background="@color/nen"
+    >
+
+    <TextView
+        android:id="@+id/viewtop"
+        android:layout_width="0dp"
+        android:layout_height="120dp"
+        android:background="#33907C"
+        android:backgroundTint="@color/background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/img_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:src="@drawable/ic_baseline_menu_24"
+        app:layout_constraintBottom_toBottomOf="@id/viewtop"
+        app:layout_constraintEnd_toEndOf="@id/viewtop"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="@id/viewtop"
+        app:layout_constraintTop_toTopOf="@id/viewtop" />
+
+    <TextView
+        android:id="@+id/putin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TNLT"
+        android:textColor="@color/white"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/viewtop"
+        app:layout_constraintEnd_toEndOf="@id/viewtop"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@id/viewtop"
+        app:layout_constraintTop_toTopOf="@id/viewtop" />
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/notification_background"
+        app:layout_constraintStart_toStartOf="@id/viewtop"
+        app:layout_constraintBottom_toBottomOf="@id/viewtop"
+        app:layout_constraintTop_toTopOf="@id/viewtop"
+        app:layout_constraintEnd_toEndOf="@id/viewtop"
+        app:layout_constraintHorizontal_bias="1"
+        android:layout_marginRight="10dp"
+        android:src="@drawable/ic_baseline_notifications_24"
+        />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="300dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/botron"
+        android:drawableStart="@drawable/ic_baseline_search_24"
+        android:drawablePadding="7dp"
+        android:hint="Nhập tên cửa hàng"
+        android:inputType="textAutoCorrect"
+        android:minHeight="48dp"
+        android:padding="5dp"
+        android:textSize="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.423"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/putin"
+        app:layout_constraintVertical_bias="0.021" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="0dp"
+        android:layout_height="120dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView"
+        app:layout_constraintVertical_bias="0.027" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:text="Category"
+        android:textColor="@color/black"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/viewtop"
+        app:layout_constraintVertical_bias="0.062"
+        android:layout_marginTop="16dp"/>
+
+    <ImageView
+        android:layout_width="48dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="704dp"
+        android:background="@drawable/vongtrong_background"
+        app:layout_constraintVertical_bias="0.95"
+        android:src="@drawable/ic_baseline_home_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.114"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:layout_width="48dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="704dp"
+        android:src="@drawable/ic_baseline_search_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.95"
+        app:layout_constraintHorizontal_bias="0.361"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/img_store"
+        android:layout_width="48dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="704dp"
+        android:src="@drawable/ic_baseline_store_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.659"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/img_accont"
+        android:layout_width="48dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="704dp"
+
+        android:src="@drawable/ic_baseline_account_box_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.901"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintVertical_bias="0.95"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Danh sách cửa hàng"
+        android:textColor="@color/black"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recyclerView" />
+
+    <ListView
+        android:id="@+id/listview"
+        android:layout_width="0dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="388dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

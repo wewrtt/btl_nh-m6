@@ -5,6 +5,9 @@ import androidx.viewpager.widget.ViewPager;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.TextView;
 
 import com.example.btlandroidnhom6.R;
 
@@ -17,6 +20,7 @@ public class Test_Screem extends AppCompatActivity {
     private  PhotoAdapter photoAdapter;
     private CircleIndicator circleIndicator;
     private ViewPager viewPager2;
+    private TextView txt;
     private List<Photo> getListPhoto(){
         List<Photo> list= new ArrayList<>();
         list.add(new Photo(R.drawable.welcome1));
@@ -31,7 +35,13 @@ public class Test_Screem extends AppCompatActivity {
 
         viewPager2 = findViewById(R.id.viewPager2);
         circleIndicator= findViewById(R.id.CircleIndicator);
-
+        txt=findViewById(R.id.textView4);
+        txt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.e("test","đăng ký");
+            }
+        });
         photoAdapter = new PhotoAdapter(this,getListPhoto());
         viewPager2.setAdapter(photoAdapter);
         circleIndicator.setViewPager(viewPager2);

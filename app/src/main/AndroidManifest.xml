@@ -10,18 +10,25 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BtlAndroidNhom6">
         <activity
+            android:name=".Home.MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".profile.ProfileHome"
+            android:exported="false" />
+        <activity
+            android:name=".store.CreateStore"
+            android:exported="false" />
+        <activity
+            android:name=".store.StoreHome"
+            android:exported="false" />
+        <activity
             android:name=".welcome.Test_Screem"
             android:exported="false" />
-        <!-- <activity -->
-        <!-- android:name=".thuc_hanh.Caculator" -->
-        <!-- android:exported="true" > -->
-        <!-- <intent-filter> -->
-        <!-- <action android:name="android.intent.action.MAIN" /> -->
-        <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
-        <!-- </intent-filter> -->
-        <!-- </activity> -->
         <activity
             android:name=".login_registor.LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".login_registor.Registor"
             android:exported="false" />
         <activity
             android:name=".welcome.Welcom2"
