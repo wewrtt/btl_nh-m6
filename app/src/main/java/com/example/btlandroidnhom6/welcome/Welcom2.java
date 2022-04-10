@@ -5,23 +5,33 @@ import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.btlandroidnhom6.Home.MainActivity;
 import com.example.btlandroidnhom6.R;
 import com.example.btlandroidnhom6.Welcome;
+import com.example.btlandroidnhom6.api.APIService;
 import com.example.btlandroidnhom6.login_registor.LoginActivity;
+import com.example.btlandroidnhom6.model.Respone;
+import com.example.btlandroidnhom6.model.User;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import me.relex.circleindicator.CircleIndicator;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class Welcom2 extends AppCompatActivity {
+    private static final  String TAG=Welcom2.class.getSimpleName();
     private  PhotoAdapter photoAdapter;
     private CircleIndicator circleIndicator;
     private ViewPager viewPager2;
     private Button btn;
+    public static User user;
     private List<Photo> getListPhoto(){
         List<Photo> list= new ArrayList<>();
         list.add(new Photo(R.drawable.welcome1));
@@ -48,8 +58,8 @@ public class Welcom2 extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i= new Intent(Welcom2.this, LoginActivity.class);
-                startActivity(i);
+//                Intent i= new Intent(Welcom2.this, MainActivity.class);
+//                startActivity(i);
             }
         });
     }

@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.btlandroidnhom6.Home.MainActivity;
+import com.example.btlandroidnhom6.login_registor.LoginActivity;
 import com.example.btlandroidnhom6.login_registor.Registor;
 import com.example.btlandroidnhom6.store.StoreHome;
 import com.example.btlandroidnhom6.welcome.Welcom2;
@@ -27,7 +28,7 @@ public class Welcome extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i= new Intent(Welcome.this, Welcom2.class);
+                Intent i= new Intent(Welcome.this, LoginActivity.class);
                 startActivity(i);
             }
         });

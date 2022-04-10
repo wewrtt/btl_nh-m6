@@ -11,31 +11,45 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.example.btlandroidnhom6.R;
+import com.example.btlandroidnhom6.api.APIService;
 import com.example.btlandroidnhom6.model.Category;
 import com.example.btlandroidnhom6.model.Cuahang;
 import com.example.btlandroidnhom6.model.CuahangAdapter;
 import com.example.btlandroidnhom6.model.ListviewAdapter;
+import com.example.btlandroidnhom6.model.Respone;
+import com.example.btlandroidnhom6.model.User;
 import com.example.btlandroidnhom6.profile.ProfileHome;
 import com.example.btlandroidnhom6.store.StoreHome;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class MainActivity extends AppCompatActivity {
     private static final  String TAG=MainActivity.class.getSimpleName();
+
+    private TextView putin;
     RecyclerView recyclerview;
     List<Category> categoryList;
     CuahangAdapter cuahangadapt;
     private ListView listView;
     List<Cuahang> cuahangList;
     private ListviewAdapter adapter;
-
+    private  Bundle extrax;
     private ImageView img_store,img_account;
     public void anhXa(){
+        putin = findViewById(R.id.putin);
         img_store=findViewById(R.id.img_store);
         img_account=findViewById(R.id.img_accont);
+        extrax= getIntent().getExtras();
+
+        //putin.setText(extrax.get("fullName")+"");
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {

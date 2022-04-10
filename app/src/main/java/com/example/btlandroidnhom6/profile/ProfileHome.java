@@ -35,6 +35,8 @@ public class ProfileHome extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i= new Intent(ProfileHome.this, MainActivity.class);
                 startActivity(i);
+
+
             }
         });
     }
