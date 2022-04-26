@@ -67,12 +67,12 @@ public class Registor extends AppCompatActivity  {
             @Override
             public void onResponse(Call<Respone> call, Response<Respone> response) {
                 Respone res= response.body();
-                Log.e(TAG,res.getMessage());
-                if(res.getMessage().equals("registor success")){
+                Log.e(TAG,res.getStatusCode()+"");
+                if(res.getStatusCode()==201){
                     Registor.this.finish();
                 }
                 else {
-                    Toast.makeText(Registor.this,res.getMessage(),Toast.LENGTH_LONG).show();
+                    Toast.makeText(Registor.this,"tài khoản đã tồn tại",Toast.LENGTH_LONG).show();
                 }
             }
 
@@ -96,8 +96,8 @@ public class Registor extends AppCompatActivity  {
                 String passWord=txt_passWord.getText().toString();
                 String fullName=txt_fullname.getText().toString();
                 String email=txt_email.getText().toString();
-                user= new User(fullName,userName,passWord,email);
-                clickLogin(user);
+//                user= new User(fullName,userName,passWord,email);
+//                clickLogin(user);
 
             }
         });

@@ -37,7 +37,7 @@ public class FindPassword extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 User user= new User();
-                user.setUserName(txt_userName.getText().toString());
+                user.setUsername(txt_userName.getText().toString());
                 user.setEmail(txt_email.getText().toString());
                 click_button(user);
             }
@@ -54,7 +54,7 @@ public class FindPassword extends AppCompatActivity {
            @Override
            public void onResponse(Call<Respone> call, Response<Respone> response) {
                Respone res= response.body();
-               if(res.getMessage().equals("ok")){
+               if(res.getStatusCode() == 200){
                    Toast.makeText(FindPassword.this,"check your eamil for get password",Toast.LENGTH_LONG).show();
                }
                else {

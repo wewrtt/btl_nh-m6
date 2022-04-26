@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">btlAndroidNhom6</string>
+    <string name="app_name"></string>
     <string name="title_activity_login">LoginActivity</string>
     <string name="prompt_email">UserName</string>
     <string name="first_name">Họ tên đệm</string>

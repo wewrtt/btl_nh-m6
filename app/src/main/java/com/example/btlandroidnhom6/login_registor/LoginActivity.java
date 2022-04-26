@@ -16,8 +16,20 @@ import com.example.btlandroidnhom6.Home.MainActivity;
 import com.example.btlandroidnhom6.R;
 import com.example.btlandroidnhom6.api.APIService;
 import com.example.btlandroidnhom6.model.Respone;
+import com.example.btlandroidnhom6.model.ResponseStore;
+import com.example.btlandroidnhom6.model.Store;
 import com.example.btlandroidnhom6.model.User;
 import com.example.btlandroidnhom6.welcome.Welcom2;
+import com.google.gson.Gson;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+
+import org.json.JSONObject;
+
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -26,7 +38,9 @@ import retrofit2.Response;
 public class LoginActivity extends AppCompatActivity {
     private Button btn_login;
     private TextView txt_re,txt_findPassword;
+    public  static  List<Store> storeList= new ArrayList<>();
     private EditText edt_username,edt_password;
+    public static  User mainUser ;
     private static  final  String TAG= LoginActivity.class.getSimpleName();
     public  void anhXa(){
         txt_findPassword=findViewById(R.id.findPassWord);
@@ -40,19 +54,41 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<Respone> call, Response<Respone> response) {
                 Respone respone = response.body();
-                if(respone.getMessage().equals("login success")){
-
+                Log.e(TAG,respone.getStatusCode()+"");
+                if(respone.getStatusCode()==201){
                     Intent i= new Intent(LoginActivity.this, Welcom2.class);
+                    Object res= respone.getData();
+                    Gson gson= new Gson();
+                    JsonObject jsonObject = gson.toJsonTree(res).getAsJsonObject();
+                    mainUser = gson.fromJson(jsonObject,User.class);
+                    Log.e(TAG,mainUser.getUsername());
+                    getListStore();
                     startActivity(i);
                 }
                 else {
-                    Toast.makeText(LoginActivity.this,respone.getMessage(),Toast.LENGTH_LONG).show();
+                    Toast.makeText(LoginActivity.this,"tài khoản đã tồn tại hoặc mật khẩu ko đúng",Toast.LENGTH_LONG).show();
                 }
             }
             @Override
             public void onFailure(Call<Respone> call, Throwable t) {
                 Log.e(TAG,t.toString());
                 Toast.makeText(LoginActivity.this,"server erro",Toast.LENGTH_LONG).show();
+            }
+        });
+    }
+    private void getListStore(){
+        APIService.apiService.getListStore(mainUser.get_id()).enqueue(new Callback<ResponseStore>() {
+            @Override
+            public void onResponse(Call<ResponseStore> call, Response<ResponseStore> response) {
+                ResponseStore res = response.body();
+                if (res.getStatusCode() == 200) {
+                    storeList = res.getData();
+
+                }
+            }
+            @Override
+            public void onFailure(Call<ResponseStore> call, Throwable t) {
+                Toast.makeText(LoginActivity.this,"tài khoản đã tồn tại hoặc mật khẩu ko đúng",Toast.LENGTH_LONG).show();
             }
         });
     }

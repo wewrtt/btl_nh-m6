@@ -9,24 +9,24 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.btlandroidnhom6.R;
+import com.squareup.picasso.Picasso;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class ListviewAdapter extends BaseAdapter {
     private  Context context;
-    private List<Cuahang> listCuahang;
+    private List<Store> listStore;
     private  int layout;
 
-    public ListviewAdapter(Context context, List<Cuahang> listCuahang, int layout) {
+    public ListviewAdapter(Context context, List<Store> listStore, int layout) {
         this.context = context;
-        this.listCuahang = listCuahang;
+        this.listStore = listStore;
         this.layout = layout;
     }
 
     @Override
     public int getCount() {
-        return listCuahang.size();
+        return listStore.size();
     }
 
     @Override
@@ -58,11 +58,12 @@ public class ListviewAdapter extends BaseAdapter {
               convertView.setTag(viewHolder);
         }
         else viewHolder =(ViewHolder) convertView.getTag();
-        viewHolder.img.setImageResource(listCuahang.get(position).getImageurl());
-        viewHolder.txtDiaChi.setText(listCuahang.get(position).getDiachi());
-        viewHolder.txtDoanhThu.setText(listCuahang.get(position).getDoanhthu()+"");
-        viewHolder.txtLoaiHang.setText(listCuahang.get(position).getLoaihang());
-        viewHolder.txtQuanLy.setText(listCuahang.get(position).getQuanly());
+        Picasso.get().load(listStore.get(position).getImageUrl()).into(viewHolder.img);
+        viewHolder.txtDiaChi.setText(listStore.get(position).getAddress());
+        viewHolder.txtDoanhThu.setText(listStore.get(position).getEmail()+"");
+        viewHolder.txtLoaiHang.setText(listStore.get(position).getDescription());
+        viewHolder.txtQuanLy.setText(listStore.get(position).getPhoneNumber());
+
         return convertView;
     }
 

@@ -1,15 +1,18 @@
 package com.example.btlandroidnhom6.model;
 
-public class Respone {
-    private  int statusCode;
-    private  Object data;
+import java.util.ArrayList;
+import java.util.List;
 
-    public Respone(int statusCode, Object data) {
+public class ResponeUser {
+    private  int statusCode;
+    private List<User> data;
+
+    public ResponeUser(int statusCode, List<User> data) {
         this.statusCode = statusCode;
         this.data = data;
     }
 
-    public Respone() {
+    public ResponeUser() {
     }
 
     public int getStatusCode() {
@@ -20,11 +23,11 @@ public class Respone {
         this.statusCode = statusCode;
     }
 
-    public Object getData() {
+    public List<User> getData() {
         return data;
     }
 
-    public void setData(Object data) {
+    public void setData(List<User> data) {
         this.data = data;
     }
 }

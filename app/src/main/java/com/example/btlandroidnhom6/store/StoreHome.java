@@ -37,14 +37,15 @@ public class StoreHome extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i= new Intent(StoreHome.this, ProfileHome.class);
-                startActivity(i);
+                startActivityForResult(i,3);
             }
         });
         img_home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i= new Intent(StoreHome.this, MainActivity.class);
-                startActivity(i);
+                Intent i= new Intent();
+                setResult(MainActivity.RESULT_OK,i);
+                finish();
             }
         });
     }

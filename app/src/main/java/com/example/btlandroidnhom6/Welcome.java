@@ -9,16 +9,28 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.btlandroidnhom6.Home.MainActivity;
+import com.example.btlandroidnhom6.api.APIService;
 import com.example.btlandroidnhom6.login_registor.LoginActivity;
 import com.example.btlandroidnhom6.login_registor.Registor;
+import com.example.btlandroidnhom6.model.ResponeUser;
+import com.example.btlandroidnhom6.model.User;
 import com.example.btlandroidnhom6.store.StoreHome;
 import com.example.btlandroidnhom6.welcome.Welcom2;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class Welcome extends AppCompatActivity {
-    Button btn,btn2;
+    Button btn,btn2,btn_api;
+    public  final  static  String TAG = Welcome.class.getSimpleName();
     public void anhXa(){
         btn= findViewById(R.id.btn_next);
         btn2=findViewById(R.id.btn_test);
+        btn_api = findViewById(R.id.btn_testApi);
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +52,28 @@ public class Welcome extends AppCompatActivity {
                 startActivity(i);
             }
         });
+        btn_api.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                APIService.apiService.getList().enqueue(new Callback<ResponeUser>() {
+                    @Override
+                    public void onResponse(Call<ResponeUser> call, Response<ResponeUser> response) {
+                        ResponeUser res= response.body();
+                        if(res.getStatusCode()==200) {
+                            List<User> arrayList = res.getData();
+                                Log.e(TAG, arrayList.size()+"");
+                        }
+
+                    }
+
+                    @Override
+                    public void onFailure(Call<ResponeUser> call, Throwable t) {
+
+                    }
+                });
+            }
+        });
 
     }
+
 }

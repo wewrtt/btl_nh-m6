@@ -18,7 +18,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="file:/E:/SDK/icons/material/materialicons/notifications/baseline_notifications_24.xml" />
+                                      <entry key="url" value="file:/E:/SDK/icons/material/materialicons/insert_chart/baseline_insert_chart_24.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -28,8 +28,8 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="color" value="ffffff" />
-                            <entry key="outputName" value="ic_baseline_notifications_24" />
+                            <entry key="color" value="c6c0c0" />
+                            <entry key="outputName" value="ic_baseline_insert_chart_24" />
                             <entry key="sourceFile" value="F:\btlAndroidNhom4" />
                           </map>
                         </option>

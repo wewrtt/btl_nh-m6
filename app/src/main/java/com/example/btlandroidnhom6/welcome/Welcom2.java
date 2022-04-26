@@ -44,6 +44,8 @@ public class Welcom2 extends AppCompatActivity {
         circleIndicator= findViewById(R.id.CircleIndicator);
         photoAdapter = new PhotoAdapter(this,getListPhoto());
         btn= findViewById(R.id.button);
+        user= LoginActivity.mainUser;
+
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,12 +56,13 @@ public class Welcom2 extends AppCompatActivity {
         viewPager2.setAdapter(photoAdapter);
         circleIndicator.setViewPager(viewPager2);
         photoAdapter.registerDataSetObserver(circleIndicator.getDataSetObserver());
-
+        Log.e(TAG,user.get_id());
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Intent i= new Intent(Welcom2.this, MainActivity.class);
-//                startActivity(i);
+
+                Intent i= new Intent(Welcom2.this, MainActivity.class);
+                startActivity(i);
             }
         });
     }

@@ -22,8 +22,8 @@
 
         <ImageView
             android:id="@+id/img_home"
-            android:layout_width="48dp"
-            android:layout_height="42dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.15"
@@ -34,8 +34,8 @@
 
         <ImageView
             android:id="@+id/img_search"
-            android:layout_width="48dp"
-            android:layout_height="42dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.372"
@@ -46,8 +46,8 @@
 
         <ImageView
             android:id="@+id/img_profile"
-            android:layout_width="48dp"
-            android:layout_height="42dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.877"
@@ -58,8 +58,8 @@
 
         <ImageView
             android:id="@+id/img_store"
-            android:layout_width="48dp"
-            android:layout_height="42dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:background="@drawable/vongtrong_background"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

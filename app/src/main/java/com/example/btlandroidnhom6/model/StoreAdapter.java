@@ -15,11 +15,11 @@ import com.example.btlandroidnhom6.R;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CuahangAdapter extends RecyclerView.Adapter<CuahangAdapter.cuahangviewholder> {
+public class StoreAdapter extends RecyclerView.Adapter<StoreAdapter.cuahangviewholder> {
     Context con;
     List<Category> cuahanglist;
 
-    public CuahangAdapter(MainActivity mainActivity, ArrayList<Category> datalist) {
+    public StoreAdapter(MainActivity mainActivity, ArrayList<Category> datalist) {
         cuahanglist= new ArrayList<>();
         cuahanglist=datalist;
         con=mainActivity;
