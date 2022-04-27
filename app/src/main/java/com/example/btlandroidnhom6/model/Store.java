@@ -1,7 +1,9 @@
 package com.example.btlandroidnhom6.model;
 
-public class Store {
-    private String address,description,email,isRoot,name,phoneNumber,userId,imageUrl;
+import java.io.Serializable;
+
+public class Store implements Serializable {
+    private String address,description,email,isRoot,name,phoneNumber,userId,imageUrl,_id;
 
     public Store(String address, String description, String email, String isRoot, String name, String phoneNumber, String userId, String imageUrl) {
         this.address = address;
@@ -13,9 +15,16 @@ public class Store {
         this.userId = userId;
         this.imageUrl = imageUrl;
     }
-
     public Store() {
 
+    }
+
+    public String get_id() {
+        return _id;
+    }
+
+    public void set_id(String _id) {
+        this._id = _id;
     }
 
     public String getAddress() {

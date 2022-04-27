@@ -23,7 +23,7 @@ import com.example.btlandroidnhom6.model.Category;
 import com.example.btlandroidnhom6.model.ResponseStore;
 import com.example.btlandroidnhom6.model.Store;
 import com.example.btlandroidnhom6.model.StoreAdapter;
-import com.example.btlandroidnhom6.model.ListviewAdapter;
+import com.example.btlandroidnhom6.store.ListviewAdapter;
 import com.example.btlandroidnhom6.model.User;
 import com.example.btlandroidnhom6.profile.ProfileHome;
 import com.example.btlandroidnhom6.store.StoreHome;

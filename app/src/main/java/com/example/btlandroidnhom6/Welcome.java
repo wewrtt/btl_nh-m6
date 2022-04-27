@@ -8,16 +8,13 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.btlandroidnhom6.Home.MainActivity;
 import com.example.btlandroidnhom6.api.APIService;
 import com.example.btlandroidnhom6.login_registor.LoginActivity;
-import com.example.btlandroidnhom6.login_registor.Registor;
 import com.example.btlandroidnhom6.model.ResponeUser;
 import com.example.btlandroidnhom6.model.User;
-import com.example.btlandroidnhom6.store.StoreHome;
-import com.example.btlandroidnhom6.welcome.Welcom2;
+import com.example.btlandroidnhom6.product.ListProduct;
+import com.example.btlandroidnhom6.store.CreateStore;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -48,7 +45,7 @@ public class Welcome extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Log.e("registor","here");
-                Intent i= new Intent(Welcome.this, MainActivity.class);
+                Intent i= new Intent(Welcome.this, ListProduct.class);
                 startActivity(i);
             }
         });

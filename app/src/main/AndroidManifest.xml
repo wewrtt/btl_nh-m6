@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BtlAndroidNhom6">
         <activity
+            android:name=".product.CreateProduct"
+            android:exported="false" />
+        <activity
+            android:name=".product.ListProduct"
+            android:exported="false" />
+        <activity
             android:name=".login_registor.FindPassword"
             android:exported="false" />
         <activity

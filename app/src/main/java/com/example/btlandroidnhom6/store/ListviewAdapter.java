@@ -1,4 +1,4 @@
-package com.example.btlandroidnhom6.model;
+package com.example.btlandroidnhom6.store;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.btlandroidnhom6.R;
+import com.example.btlandroidnhom6.model.Store;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;

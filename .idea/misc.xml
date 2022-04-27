@@ -16,9 +16,11 @@
         <entry key="..\:/btlAndroidNhom4/app/src/main/res/drawable/vongtrong_background.xml" value="0.122" />
         <entry key="..\:/btlAndroidNhom4/app/src/main/res/layout-land/activity_caculator.xml" value="0.2" />
         <entry key="..\:/btlAndroidNhom4/app/src/main/res/layout/activity_caculator.xml" value="0.22" />
+        <entry key="..\:/btlAndroidNhom4/app/src/main/res/layout/activity_create_product.xml" value="0.25" />
         <entry key="..\:/btlAndroidNhom4/app/src/main/res/layout/activity_create_store.xml" value="0.25" />
         <entry key="..\:/btlAndroidNhom4/app/src/main/res/layout/activity_find_password.xml" value="0.25" />
-        <entry key="..\:/btlAndroidNhom4/app/src/main/res/layout/activity_home_store.xml" value="0.25" />
+        <entry key="..\:/btlAndroidNhom4/app/src/main/res/layout/activity_home_store.xml" value="0.22" />
+        <entry key="..\:/btlAndroidNhom4/app/src/main/res/layout/activity_list_product.xml" value="0.22" />
         <entry key="..\:/btlAndroidNhom4/app/src/main/res/layout/activity_login.xml" value="0.33" />
         <entry key="..\:/btlAndroidNhom4/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/btlAndroidNhom4/app/src/main/res/layout/activity_profile_home.xml" value="0.25" />
@@ -30,6 +32,8 @@
         <entry key="..\:/btlAndroidNhom4/app/src/main/res/layout/fragment.xml" value="0.1" />
         <entry key="..\:/btlAndroidNhom4/app/src/main/res/layout/iteam_photo.xml" value="0.17074275362318841" />
         <entry key="..\:/btlAndroidNhom4/app/src/main/res/layout/layout_item_rows.xml" value="0.17074275362318841" />
+        <entry key="..\:/btlAndroidNhom4/app/src/main/res/layout/listproduct.xml" value="0.19610507246376813" />
+        <entry key="..\:/btlAndroidNhom4/app/src/main/res/layout/product.xml" value="0.25" />
         <entry key="..\:/btlAndroidNhom4/app/src/main/res/layout/welcome.xml" value="0.25" />
         <entry key="..\:/btlAndroidNhom4/app/src/main/res/menu/menu_home.xml" value="0.20416666666666666" />
         <entry key="..\:/btlAndroidNhom6/app/src/main/res/layout/activity_main.xml" value="0.17074275362318841" />

@@ -15,6 +15,7 @@ import android.widget.Toast;
 import com.example.btlandroidnhom6.Home.MainActivity;
 import com.example.btlandroidnhom6.R;
 import com.example.btlandroidnhom6.api.APIService;
+import com.example.btlandroidnhom6.model.Product;
 import com.example.btlandroidnhom6.model.Respone;
 import com.example.btlandroidnhom6.model.ResponseStore;
 import com.example.btlandroidnhom6.model.Store;
@@ -36,12 +37,14 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class LoginActivity extends AppCompatActivity {
+    public  static  List<Store> storeList= new ArrayList<>();
+    public static  User mainUser ;
+
     private Button btn_login;
     private TextView txt_re,txt_findPassword;
-    public  static  List<Store> storeList= new ArrayList<>();
     private EditText edt_username,edt_password;
-    public static  User mainUser ;
     private static  final  String TAG= LoginActivity.class.getSimpleName();
+
     public  void anhXa(){
         txt_findPassword=findViewById(R.id.findPassWord);
         edt_password= findViewById(R.id.password);

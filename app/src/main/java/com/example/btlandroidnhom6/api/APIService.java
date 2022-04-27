@@ -1,6 +1,7 @@
 package com.example.btlandroidnhom6.api;
 
 import com.example.btlandroidnhom6.model.Respone;
+import com.example.btlandroidnhom6.model.ResponeProduct;
 import com.example.btlandroidnhom6.model.ResponeUser;
 import com.example.btlandroidnhom6.model.ResponseStore;
 import com.example.btlandroidnhom6.model.User;
@@ -31,4 +32,7 @@ public interface APIService {
     Call<ResponeUser> getList();
     @GET("/cua-hang/user/{userId}")
     Call<ResponseStore> getListStore(@Path("userId") String userId);
+
+    @GET("/san-pham/cua-hang/{storeId}")
+    Call<ResponeProduct> getListProduct(@Path("storeId") String storeId);
 }
