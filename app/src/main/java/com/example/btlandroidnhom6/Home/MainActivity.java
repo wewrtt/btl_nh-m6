@@ -27,6 +27,8 @@ import com.example.btlandroidnhom6.store.ListviewAdapter;
 import com.example.btlandroidnhom6.model.User;
 import com.example.btlandroidnhom6.profile.ProfileHome;
 import com.example.btlandroidnhom6.store.StoreHome;
+import com.example.btlandroidnhom6.thongke.thongkeChainStore;
+import com.example.btlandroidnhom6.thongke.thongkeStore;
 import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
@@ -50,13 +52,16 @@ public class MainActivity extends AppCompatActivity {
     private ListView listView;
     private ListviewAdapter adapter;
 
-    private  TextView txt_store,txt_profile;
+    private  TextView txt_store,txt_profile,txt_thongkestore,txt_thongkechainstore;
 
     private ImageView img_store,img_account,img_fragment;
 
     public void anhXa(){
         txt_store = findViewById(R.id.txt_store);
         txt_profile = findViewById(R.id.txt_profile);
+        txt_thongkestore = findViewById(R.id.txt_thongke_store);
+        txt_thongkechainstore = findViewById(R.id.txt_thongke_chainStore);
+
         toolbar = findViewById(R.id.viewtop);
         navigationView =findViewById(R.id.navigationView);
         drawerLayout= findViewById(R.id.DrawerLayout);
@@ -66,8 +71,12 @@ public class MainActivity extends AppCompatActivity {
         User u = new User();
         mainUser= (LoginActivity.mainUser != null) ? LoginActivity.mainUser:u;
         putin.setText(mainUser.getFullname()+"");
-        storeList = LoginActivity.storeList;
-
+        //storeList = LoginActivity.storeList;
+        storeList = new ArrayList<>();
+        storeList.add(new Store("hanoi","a","a","a","a","a","a","a"));
+        storeList.add(new Store("hadong","a","a","a","a","a","a","a"));
+        storeList.add(new Store("hadong","a","a","a","a","a","a","a"));
+        storeList.add(new Store("hadong","a","a","a","a","a","a","a"));
     }
     private void  actionToolBar(){
         setSupportActionBar(toolbar);
@@ -114,6 +123,20 @@ public class MainActivity extends AppCompatActivity {
                 startActivityForResult(i,2);
             }
         });
+        txt_thongkestore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this, thongkeStore.class);
+                startActivityForResult(i,1);
+            }
+        });
+        txt_thongkechainstore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this, thongkeChainStore.class);
+                startActivityForResult(i,2);
+            }
+        });
         actionToolBar();
 
         recyclerview = findViewById(R.id.recyclerView);
@@ -130,7 +153,8 @@ public class MainActivity extends AppCompatActivity {
         listView= findViewById(R.id.listview);
 
         adapter=new ListviewAdapter(MainActivity.this, storeList, R.layout.cuahang);
-        Log.e(TAG, storeList.get(1).getImageUrl());
+        //Log.e(TAG, storeList.get(1).getImageUrl());
+        Log.e(TAG, storeList.size()+"");
         listView.setAdapter(adapter);
     }
     private void getListStore(){

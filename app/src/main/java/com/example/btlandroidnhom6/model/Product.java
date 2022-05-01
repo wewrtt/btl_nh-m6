@@ -13,8 +13,8 @@ public class Product implements Serializable {
      private boolean isHot;
      private List<String> listCategoryId;
      private String storeId;
-
-     public Product() {
+     private String _id;
+    public Product() {
      }
 
     public Product(String name, String images, String description, int price) {
@@ -96,7 +96,15 @@ public class Product implements Serializable {
         return listCategoryId;
     }
 
-     public void setListCategoryId(List<String> listCategoryId) {
+    public String get_id() {
+        return _id;
+    }
+
+    public void set_id(String _id) {
+        this._id = _id;
+    }
+
+    public void setListCategoryId(List<String> listCategoryId) {
         this.listCategoryId = listCategoryId;
      }
 

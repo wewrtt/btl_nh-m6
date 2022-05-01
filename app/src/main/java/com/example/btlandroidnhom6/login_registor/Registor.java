@@ -37,21 +37,108 @@ public class Registor extends AppCompatActivity  {
         txt_userName=findViewById(R.id.username);
         txt_passWord=findViewById(R.id.password);
         txt_email= findViewById(R.id.email);
-        txt_fullname.addTextChangedListener(new TextWatcher() {
+
+
+        txt_email.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
+                String pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+$";
+                if(!Pattern.matches(pattern,txt_email.getText().toString())){
+                    txt_email.setError("email is not format");
+                }
             }
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
+                String pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+$";
+                if(!Pattern.matches(pattern,txt_email.getText().toString())){
+                    txt_email.setError("email is not format");
+                }
+            }
 
+            @Override
+            public void afterTextChanged(Editable s) {
+                String pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+$";
+                if(!Pattern.matches(pattern,txt_email.getText().toString())){
+                    txt_email.setError("email is not format");
+                }
+            }
+        });
+
+        txt_passWord.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                String pattern="[a-zA-Z0-9]{1,}";
+                if(!Pattern.matches(pattern,txt_passWord.getText().toString())){
+                    txt_passWord.setError("password is at least 1 character");
+                }
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                String pattern="[a-zA-Z0-9]{1,}";
+                if(!Pattern.matches(pattern,txt_passWord.getText().toString())){
+                    txt_passWord.setError("password is at least 1 character");
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                String pattern="[a-zA-Z0-9]{1,}";
+                if(!Pattern.matches(pattern,txt_passWord.getText().toString())){
+                    txt_passWord.setError("password is at least 1 character");
+                }
+            }
+        });
+
+
+        txt_userName.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                String pattern="[a-zA-Z]{4,}";
+                if(!Pattern.matches(pattern,txt_userName.getText().toString())){
+                    txt_userName.setError("userName include at least 4 charracter");
+                }
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                String pattern="[a-zA-Z]{4,}";
+                if(!Pattern.matches(pattern,txt_userName.getText().toString())){
+                    txt_userName.setError("userName include at least 4 charracter");
+                }
             }
 
             @Override
             public void afterTextChanged(Editable s) {
                 String pattern="[a-zA-Z]{4,}";
-                if(Pattern.matches(pattern,txt_fullname.getText().toString())){
+                if(!Pattern.matches(pattern,txt_userName.getText().toString())){
+                    txt_userName.setError("userName include at least 4 charracter");
+                }
+            }
+        });
+
+        txt_fullname.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                String pattern="[a-zA-Z]{4,}";
+                if(!Pattern.matches(pattern,txt_fullname.getText().toString())){
+                    txt_fullname.setError("userName include at least 4 charracter");
+                }
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                String pattern="[a-zA-Z]{4,}";
+                if(!Pattern.matches(pattern,txt_fullname.getText().toString())){
+                    txt_fullname.setError("fullName inclue 4 charracter");
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                String pattern="[a-zA-Z]{4,}";
+                if(!Pattern.matches(pattern,txt_fullname.getText().toString())){
                     txt_fullname.setError("fullName inclue 4 charracter");
                 }
             }

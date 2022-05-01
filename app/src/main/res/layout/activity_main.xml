@@ -6,17 +6,22 @@
     android:layout_height="match_parent"
     tools:context=".Home.MainActivity"
     android:background="@color/nen">
+
     <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/DrawerLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:id="@+id/DrawerLayout">
+        app:layout_constraintVertical_bias="0.0">
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/viewtop"
                 android:layout_width="0dp"
@@ -51,7 +56,7 @@
                 android:src="@drawable/ic_baseline_notifications_24"
                 app:layout_constraintBottom_toBottomOf="@id/viewtop"
                 app:layout_constraintEnd_toEndOf="@id/viewtop"
-                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintHorizontal_bias="0.904"
                 app:layout_constraintStart_toStartOf="@id/viewtop"
                 app:layout_constraintTop_toTopOf="@id/viewtop"
                 app:layout_constraintVertical_bias="0.166" />
@@ -59,10 +64,10 @@
             <EditText
                 android:id="@+id/editText"
                 android:layout_width="300dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
-                android:layout_marginTop="8dp"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="16dp"
                 android:background="@drawable/botron"
                 android:drawableStart="@drawable/ic_baseline_search_24"
                 android:drawablePadding="7dp"
@@ -71,7 +76,7 @@
                 android:minHeight="48dp"
                 android:padding="5dp"
                 android:textSize="16dp"
-                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/recyclerView"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.423"
                 app:layout_constraintStart_toStartOf="parent"
@@ -80,110 +85,119 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerView"
-                android:layout_width="0dp"
-                android:layout_height="120dp"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_width="411dp"
+                android:layout_height="98dp"
+                app:layout_constraintBottom_toTopOf="@+id/listview"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/textView"
-                app:layout_constraintVertical_bias="0.027" />
+                app:layout_constraintVertical_bias="0.173" />
 
             <TextView
                 android:id="@+id/textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
                 android:text="Category"
                 android:textColor="@color/black"
                 android:textStyle="italic"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintHorizontal_bias="0.044"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/viewtop"
-                app:layout_constraintVertical_bias="0.062"
-                android:layout_marginTop="16dp"/>
+                app:layout_constraintVertical_bias="0.046" />
 
             <ImageView
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:layout_marginTop="704dp"
+                android:layout_marginTop="12dp"
                 android:background="@drawable/vongtrong_background"
                 android:src="@drawable/ic_baseline_home_24"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.372"
+                app:layout_constraintHorizontal_bias="0.165"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toBottomOf="@+id/listview"
+                app:layout_constraintVertical_bias="0.47" />
 
             <ImageView
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:layout_marginTop="704dp"
+                android:layout_marginTop="12dp"
                 android:src="@drawable/ic_baseline_insert_chart_24"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.157"
+                app:layout_constraintHorizontal_bias="0.412"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toBottomOf="@+id/listview"
+                app:layout_constraintVertical_bias="0.47" />
 
             <ImageView
                 android:id="@+id/img_store"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:layout_marginTop="704dp"
+                android:layout_marginTop="12dp"
                 android:src="@drawable/ic_baseline_store_24"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.659"
+                app:layout_constraintHorizontal_bias="0.656"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/listview" />
 
             <ImageView
                 android:id="@+id/img_accont"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:layout_marginTop="704dp"
+                android:layout_marginTop="12dp"
                 android:src="@drawable/ic_baseline_account_box_24"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.901"
+                app:layout_constraintHorizontal_bias="0.895"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintVertical_bias="0.95"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toBottomOf="@+id/listview" />
 
             <TextView
                 android:id="@+id/textView2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="16dp"
-                android:layout_marginTop="16dp"
                 android:text="Danh sách cửa hàng"
                 android:textColor="@color/black"
                 android:textStyle="italic"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintHorizontal_bias="0.056"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/recyclerView" />
+                app:layout_constraintTop_toBottomOf="@+id/textView"
+                app:layout_constraintVertical_bias="0.243" />
+
             <ListView
                 android:id="@+id/listview"
-                android:layout_width="0dp"
-                android:layout_height="300dp"
-                android:layout_marginTop="388dp"
+                android:layout_width="410dp"
+                android:layout_height="364dp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toBottomOf="@+id/textView2"
+                app:layout_constraintVertical_bias="0.295" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <com.google.android.material.navigation.NavigationView
+            android:id="@+id/navigationView"
             android:layout_width="250dp"
             android:layout_height="match_parent"
             android:layout_gravity="start"
-            android:fitsSystemWindows="true"
-            android:id="@+id/navigationView"
-            android:background="#FFFFFF">
+            android:background="#FFFFFF"
+            android:fitsSystemWindows="true">
+
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                >
+                android:layout_height="match_parent">
+
                 <TextView
                     android:id="@+id/textView8"
                     android:layout_width="match_parent"
@@ -287,6 +301,56 @@
                     app:layout_constraintTop_toBottomOf="@+id/txt_profile"
                     app:layout_constraintVertical_bias="0.05"
                     tools:ignore="TouchTargetSizeCheck" />
+                <ImageView
+                    android:id="@+id/img_thongke_store"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.072"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/img_store_nav"
+                    app:layout_constraintVertical_bias="0.265"
+                    app:srcCompat="@drawable/ic_baseline_pie_chart_24" />
+
+                <TextView
+                    android:id="@+id/txt_thongke_store"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Thống kê theo cửa hàng"
+                    android:textColor="#33907C"
+                    android:textSize="18dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_store"
+                    app:layout_constraintVertical_bias="0.262" />
+                <ImageView
+                    android:id="@+id/img_thongke_chainStore"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.072"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/img_thongke_store"
+                    app:layout_constraintVertical_bias="0.084"
+                    app:srcCompat="@drawable/ic_baseline_insert_chart_24" />
+
+                <TextView
+                    android:id="@+id/txt_thongke_chainStore"
+                    android:layout_width="190dp"
+                    android:layout_height="wrap_content"
+                    android:text="Thống kê theo chuỗi của hàng"
+                    android:textColor="#33907C"
+                    android:textSize="18dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_thongke_store"
+                    app:layout_constraintVertical_bias="0.102" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </com.google.android.material.navigation.NavigationView>

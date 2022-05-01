@@ -8,10 +8,12 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.btlandroidnhom6.Home.MainActivity;
 import com.example.btlandroidnhom6.api.APIService;
 import com.example.btlandroidnhom6.login_registor.LoginActivity;
 import com.example.btlandroidnhom6.model.ResponeUser;
 import com.example.btlandroidnhom6.model.User;
+import com.example.btlandroidnhom6.product.CreateProduct;
 import com.example.btlandroidnhom6.product.ListProduct;
 import com.example.btlandroidnhom6.store.CreateStore;
 
@@ -45,29 +47,16 @@ public class Welcome extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Log.e("registor","here");
-                Intent i= new Intent(Welcome.this, ListProduct.class);
+                Intent i= new Intent(Welcome.this, CreateProduct.class);
                 startActivity(i);
             }
         });
         btn_api.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                APIService.apiService.getList().enqueue(new Callback<ResponeUser>() {
-                    @Override
-                    public void onResponse(Call<ResponeUser> call, Response<ResponeUser> response) {
-                        ResponeUser res= response.body();
-                        if(res.getStatusCode()==200) {
-                            List<User> arrayList = res.getData();
-                                Log.e(TAG, arrayList.size()+"");
-                        }
+                Intent i= new Intent(Welcome.this, MainActivity.class);
+                startActivity(i);
 
-                    }
-
-                    @Override
-                    public void onFailure(Call<ResponeUser> call, Throwable t) {
-
-                    }
-                });
             }
         });
 

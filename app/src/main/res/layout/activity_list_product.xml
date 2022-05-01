@@ -19,6 +19,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.045" />
+
     <Button
         android:id="@+id/btn_add"
         android:layout_width="300dp"
@@ -30,8 +31,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.196" />
+        app:layout_constraintTop_toBottomOf="@+id/img_favorite"
+        app:layout_constraintVertical_bias="0.118" />
 
     <ImageView
         android:id="@+id/img_cart"
@@ -59,8 +60,8 @@
 
     <GridView
         android:id="@+id/GridView_ListProduct"
-        android:layout_width="match_parent"
-        android:layout_height="526dp"
+        android:layout_width="495dp"
+        android:layout_height="565dp"
         android:background="@color/white"
         android:numColumns="2"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -68,18 +69,18 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.987" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/textView13"
-        android:layout_width="match_parent"
-        android:layout_height="94dp"
+        android:layout_width="458dp"
+        android:layout_height="155dp"
         android:background="@color/white"
         android:text="."
-        app:layout_constraintBottom_toTopOf="@+id/GridView_ListProduct"
+        app:layout_constraintBottom_toBottomOf="@+id/GridView_ListProduct"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.157" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -10,7 +10,17 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.BtlAndroidNhom6">
+        android:theme="@style/Theme.BtlAndroidNhom6"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".store.EditStore"
+            android:exported="false" />
+        <activity
+            android:name=".thongke.thongkeChainStore"
+            android:exported="false" />
+        <activity
+            android:name=".thongke.thongkeStore"
+            android:exported="false" />
         <activity
             android:name=".product.CreateProduct"
             android:exported="false" />

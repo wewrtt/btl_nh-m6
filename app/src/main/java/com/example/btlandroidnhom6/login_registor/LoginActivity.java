@@ -3,11 +3,13 @@ package com.example.btlandroidnhom6.login_registor;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.nfc.Tag;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -39,10 +41,11 @@ import retrofit2.Response;
 public class LoginActivity extends AppCompatActivity {
     public  static  List<Store> storeList= new ArrayList<>();
     public static  User mainUser ;
-
+    public CheckBox checkBox;
     private Button btn_login;
     private TextView txt_re,txt_findPassword;
     private EditText edt_username,edt_password;
+    private SharedPreferences sharedPreferences;
     private static  final  String TAG= LoginActivity.class.getSimpleName();
 
     public  void anhXa(){
@@ -50,9 +53,17 @@ public class LoginActivity extends AppCompatActivity {
         edt_password= findViewById(R.id.password);
         edt_username = findViewById(R.id.username);
         btn_login=findViewById(R.id.btn_login);
+        checkBox =findViewById(R.id.checkBox);
         txt_re=findViewById(R.id.txt_re);
+        sharedPreferences =getSharedPreferences("config",MODE_PRIVATE);
     }
     public void clickLogin(User user){
+        if(checkBox.isChecked()){
+            SharedPreferences.Editor editor= sharedPreferences.edit();
+            editor.putString("username",edt_username.getText().toString());
+            editor.putString("password",edt_password.getText().toString());
+            editor.commit();
+        }
         APIService.apiService.login(user).enqueue(new Callback<Respone>() {
             @Override
             public void onResponse(Call<Respone> call, Response<Respone> response) {
@@ -66,6 +77,7 @@ public class LoginActivity extends AppCompatActivity {
                     mainUser = gson.fromJson(jsonObject,User.class);
                     Log.e(TAG,mainUser.getUsername());
                     getListStore();
+
                     startActivity(i);
                 }
                 else {
@@ -101,6 +113,9 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         anhXa();
+        edt_username.setText(sharedPreferences.getString("username",""));
+        edt_password.setText(sharedPreferences.getString("password",""));
+
         btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

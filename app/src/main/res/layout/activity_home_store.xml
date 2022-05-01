@@ -9,9 +9,9 @@
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="408dp"
-        android:layout_height="661dp"
-        android:layout_marginTop="100dp"
+        android:id="@+id/constraintLayout3"
+        android:layout_width="436dp"
+        android:layout_height="700dp"
         android:background="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -26,10 +26,10 @@
             android:layout_height="30dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.15"
+            app:layout_constraintHorizontal_bias="0.152"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.974"
+            app:layout_constraintTop_toBottomOf="@+id/StoreHome_ListView"
+            app:layout_constraintVertical_bias="0.673"
             app:srcCompat="@drawable/ic_baseline_home_24" />
 
         <ImageView
@@ -38,11 +38,11 @@
             android:layout_height="30dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.372"
+            app:layout_constraintHorizontal_bias="0.374"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.975"
-            app:srcCompat="@drawable/ic_baseline_search_24" />
+            app:layout_constraintTop_toBottomOf="@+id/StoreHome_ListView"
+            app:layout_constraintVertical_bias="0.673"
+            app:srcCompat="@drawable/ic_baseline_insert_chart_24" />
 
         <ImageView
             android:id="@+id/img_profile"
@@ -50,10 +50,10 @@
             android:layout_height="30dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.877"
+            app:layout_constraintHorizontal_bias="0.908"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.974"
+            app:layout_constraintTop_toBottomOf="@+id/StoreHome_ListView"
+            app:layout_constraintVertical_bias="0.673"
             app:srcCompat="@drawable/ic_baseline_account_box_24" />
 
         <ImageView
@@ -63,10 +63,10 @@
             android:background="@drawable/vongtrong_background"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.636"
+            app:layout_constraintHorizontal_bias="0.64"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.974"
+            app:layout_constraintTop_toBottomOf="@+id/StoreHome_ListView"
+            app:layout_constraintVertical_bias="0.673"
             app:srcCompat="@drawable/ic_baseline_store_24" />
 
         <Button
@@ -77,21 +77,21 @@
             android:background="@drawable/custom_button1"
             android:text="Thêm Cửa Hàng"
             android:textColor="@color/white"
+            app:layout_constraintBottom_toTopOf="@+id/StoreHome_ListView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.436" />
+
+        <ListView
+            android:id="@+id/StoreHome_ListView"
+            android:layout_width="434dp"
+            android:layout_height="530dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintVertical_bias="0.026" />
-
-        <ListView
-            android:id="@+id/StoreHome_ListView"
-            android:layout_width="match_parent"
-            android:layout_height="483dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintVertical_bias="0.629" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -103,34 +103,34 @@
         android:text="My Store"
         android:textColor="@color/white"
         android:textSize="24dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout3"
+        app:layout_constraintEnd_toStartOf="@+id/img_favorite"
+        app:layout_constraintHorizontal_bias="0.078"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.045" />
+        app:layout_constraintVertical_bias="0.534" />
 
     <ImageView
         android:id="@+id/img_cart"
         android:layout_width="47dp"
         android:layout_height="37dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.914"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.709"
+        app:layout_constraintStart_toEndOf="@+id/img_favorite"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.046"
+        app:layout_constraintVertical_bias="0.566"
         app:srcCompat="@drawable/ic_baseline_shopping_cart_24" />
 
     <ImageView
         android:id="@+id/img_favorite"
         android:layout_width="47dp"
         android:layout_height="37dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.705"
+        app:layout_constraintHorizontal_bias="0.719"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.046"
+        app:layout_constraintVertical_bias="0.566"
         app:srcCompat="@drawable/ic_baseline_favorite_24" />
 </androidx.constraintlayout.widget.ConstraintLayout>

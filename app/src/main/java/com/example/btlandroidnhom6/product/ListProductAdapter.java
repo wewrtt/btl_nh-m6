@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.example.btlandroidnhom6.R;
 import com.example.btlandroidnhom6.model.Product;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -57,9 +58,8 @@ public class ListProductAdapter extends BaseAdapter {
             convertView.setTag(viewHolder);
         }
         else viewHolder =(ListProductAdapter.ViewHolder) convertView.getTag();
-        int idanh=Integer.parseInt(listProduct.get(position).getImages());
-        //Picasso.get().load().into(viewHolder.img);
-        viewHolder.img.setImageResource(idanh);
+
+        Picasso.get().load(listProduct.get(position).getImages()).into(viewHolder.img);
         viewHolder.txtName.setText(listProduct.get(position).getName());
         viewHolder.txtprice.setText(listProduct.get(position).getPrice()+"");
         viewHolder.txtdescription.setText(listProduct.get(position).getDescription());

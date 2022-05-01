@@ -17,7 +17,7 @@ import retrofit2.http.Path;
 // .baseUrl("http://")192.168.1.101:8080 kết nói ko wifi
 public interface APIService {
     APIService apiService= new Retrofit.Builder()
-            .baseUrl("http://10.170.41.40:3001")
+            .baseUrl("http://192.168.219.107:3000")
             .addConverterFactory(GsonConverterFactory.create())
             .build().create(APIService.class);
     @POST("/user/registor")
