@@ -77,7 +77,6 @@ public class LoginActivity extends AppCompatActivity {
                     mainUser = gson.fromJson(jsonObject,User.class);
                     Log.e(TAG,mainUser.getUsername());
                     getListStore();
-
                     startActivity(i);
                 }
                 else {
@@ -98,7 +97,6 @@ public class LoginActivity extends AppCompatActivity {
                 ResponseStore res = response.body();
                 if (res.getStatusCode() == 200) {
                     storeList = res.getData();
-
                 }
             }
             @Override

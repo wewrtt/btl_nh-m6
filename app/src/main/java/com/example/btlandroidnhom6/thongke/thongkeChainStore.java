@@ -12,5 +12,6 @@ public class thongkeChainStore extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_thongke_chain_store);
+
     }
 }

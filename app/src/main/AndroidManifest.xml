@@ -25,7 +25,7 @@
             android:name=".product.CreateProduct"
             android:exported="false" />
         <activity
-            android:name=".product.ListProduct"
+            android:name=".product.ProductHome"
             android:exported="false" />
         <activity
             android:name=".login_registor.FindPassword"
@@ -53,6 +53,10 @@
             android:exported="false" />
         <activity
             android:name=".welcome.Welcom2"
+            android:exported="false" />
+
+        <activity
+            android:name=".product.ProductDetail"
             android:exported="false" />
         <activity
             android:name=".Welcome"

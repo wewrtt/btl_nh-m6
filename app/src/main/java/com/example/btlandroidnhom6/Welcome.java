@@ -9,19 +9,8 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.btlandroidnhom6.Home.MainActivity;
-import com.example.btlandroidnhom6.api.APIService;
 import com.example.btlandroidnhom6.login_registor.LoginActivity;
-import com.example.btlandroidnhom6.model.ResponeUser;
-import com.example.btlandroidnhom6.model.User;
 import com.example.btlandroidnhom6.product.CreateProduct;
-import com.example.btlandroidnhom6.product.ListProduct;
-import com.example.btlandroidnhom6.store.CreateStore;
-
-import java.util.List;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class Welcome extends AppCompatActivity {
     Button btn,btn2,btn_api;

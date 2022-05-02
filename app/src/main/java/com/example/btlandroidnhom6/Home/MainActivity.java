@@ -1,5 +1,6 @@
 package com.example.btlandroidnhom6.Home;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
@@ -11,6 +12,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -26,6 +28,7 @@ import com.example.btlandroidnhom6.model.StoreAdapter;
 import com.example.btlandroidnhom6.store.ListviewAdapter;
 import com.example.btlandroidnhom6.model.User;
 import com.example.btlandroidnhom6.profile.ProfileHome;
+import com.example.btlandroidnhom6.store.StoreDetail;
 import com.example.btlandroidnhom6.store.StoreHome;
 import com.example.btlandroidnhom6.thongke.thongkeChainStore;
 import com.example.btlandroidnhom6.thongke.thongkeStore;
@@ -47,11 +50,11 @@ public class MainActivity extends AppCompatActivity {
     private  User mainUser;
     private TextView putin;
     private RecyclerView recyclerview;
-    private List<Category> categoryList;
+    public static List<Category> categoryList;
     private StoreAdapter cuahangadapt;
     private ListView listView;
     private ListviewAdapter adapter;
-
+    private static final int REQUEST_CODE_EXAMPLE = 0x9345;
     private  TextView txt_store,txt_profile,txt_thongkestore,txt_thongkechainstore;
 
     private ImageView img_store,img_account,img_fragment;
@@ -71,12 +74,11 @@ public class MainActivity extends AppCompatActivity {
         User u = new User();
         mainUser= (LoginActivity.mainUser != null) ? LoginActivity.mainUser:u;
         putin.setText(mainUser.getFullname()+"");
-        //storeList = LoginActivity.storeList;
-        storeList = new ArrayList<>();
-        storeList.add(new Store("hanoi","a","a","a","a","a","a","a"));
-        storeList.add(new Store("hadong","a","a","a","a","a","a","a"));
-        storeList.add(new Store("hadong","a","a","a","a","a","a","a"));
-        storeList.add(new Store("hadong","a","a","a","a","a","a","a"));
+        storeList = LoginActivity.storeList;
+//        storeList.add(new Store("hanoi","a","a","a","a","a","a","a"));
+//        storeList.add(new Store("hadong","a","a","a","a","a","a","a"));
+//        storeList.add(new Store("hadong","a","a","a","a","a","a","a"));
+//        storeList.add(new Store("hadong","a","a","a","a","a","a","a"));
     }
     private void  actionToolBar(){
         setSupportActionBar(toolbar);
@@ -98,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(MainActivity.this, StoreHome.class);
-                startActivityForResult(i,1);
+                startActivityForResult(i,REQUEST_CODE_EXAMPLE);
             }
         });
         img_account.setOnClickListener(new View.OnClickListener() {
@@ -113,7 +115,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(MainActivity.this, StoreHome.class);
-                startActivityForResult(i,1);
+                startActivityForResult(i,2);
             }
         });
         txt_profile.setOnClickListener(new View.OnClickListener() {
@@ -156,20 +158,12 @@ public class MainActivity extends AppCompatActivity {
         //Log.e(TAG, storeList.get(1).getImageUrl());
         Log.e(TAG, storeList.size()+"");
         listView.setAdapter(adapter);
-    }
-    private void getListStore(){
-        APIService.apiService.getListStore(mainUser.get_id()).enqueue(new Callback<ResponseStore>() {
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onResponse(Call<ResponseStore> call, Response<ResponseStore> response) {
-                ResponseStore res = response.body();
-                if (res.getStatusCode() == 200) {
-                    storeList = res.getData();
-
-                }
-            }
-            @Override
-            public void onFailure(Call<ResponseStore> call, Throwable t) {
-                Toast.makeText(MainActivity.this,"tài khoản đã tồn tại hoặc mật khẩu ko đúng",Toast.LENGTH_LONG).show();
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent i= new Intent(MainActivity.this, StoreDetail.class);
+                i.putExtra("position",position);
+                startActivity(i);
             }
         });
     }
@@ -178,5 +172,23 @@ public class MainActivity extends AppCompatActivity {
         recyclerview.setLayoutManager(layoutmanager);
         cuahangadapt = new StoreAdapter(this,datalist);
         recyclerview.setAdapter(cuahangadapt);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == REQUEST_CODE_EXAMPLE){
+            if(resultCode==MainActivity.RESULT_OK){
+                adapter.notifyDataSetChanged();
+//                Toast.makeText(this, "OKE nhé", Toast.LENGTH_SHORT).show();
+//                 Intent intent = getIntent();
+//                finish();
+//                startActivity(intent);
+            }
+
+        }
+        else{
+        }
+
     }
 }

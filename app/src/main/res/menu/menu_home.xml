@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <item android:title="Setting"
-        android:id="@+id/menu_setting"
-        android:icon="@android:drawable/sym_call_incoming"
-        app:showAsAction="always"></item>
+ <item android:id="@+id/editable"
+     android:title="Chỉnh sửa"
+     />
+    <item android:id="@+id/deletable"
+        android:title="Xóa"/>
 </menu>

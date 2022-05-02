@@ -16,101 +16,70 @@
         android:background="#FFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0">
 
 
-        <EditText
-            android:id="@+id/edt_email2"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#33907C"
-            android:ems="10"
-            android:hint="Nhập địa chỉ hình ảnh"
-            android:inputType="textPersonName"
-            android:minHeight="48dp"
-            android:textSize="18dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.965"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.808" />
-
         <TextView
             android:id="@+id/textView6"
             android:layout_width="wrap_content"
             android:layout_height="28dp"
-            android:text="Email"
-            android:textColor="#33907C"
-            android:textSize="20dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.043"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.715" />
-
-        <TextView
-            android:id="@+id/textView7"
-            android:layout_width="wrap_content"
-            android:layout_height="28dp"
-            android:text="Hình ảnh"
+            android:text="Giảm giá"
             android:textColor="#33907C"
             android:textSize="20dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.047"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.793" />
+            app:layout_constraintTop_toBottomOf="@+id/textView12"
+            app:layout_constraintVertical_bias="0.166" />
 
-        <EditText
-            android:id="@+id/edt_email"
+        <TextView
+            android:paddingTop="10dp"
+            android:id="@+id/txt_discount"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:backgroundTint="#33907C"
             android:ems="10"
-            android:hint="Nhập email cửa hàng"
-            android:inputType="textPersonName"
             android:minHeight="48dp"
+            android:text="add"
+            android:textSize="18dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.956"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_price"
+            app:layout_constraintVertical_bias="0.104" />
+
+        <TextView
+            android:paddingTop="10dp"
+            android:id="@+id/txt_description"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#33907C"
+            android:ems="10"
+            android:minHeight="48dp"
+            android:text="add"
             android:textSize="18dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.965"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.726" />
-
-        <EditText
-            android:id="@+id/edt_description"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#33907C"
-            android:ems="10"
-            android:hint="Mô tả cửa hàng"
-            android:inputType="textPersonName"
-            android:minHeight="48dp"
-            android:textSize="18dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.965"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.644" />
+            app:layout_constraintTop_toBottomOf="@+id/txt_discount"
+            app:layout_constraintVertical_bias="0.226" />
 
         <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="301dp"
-            android:layout_height="180dp"
-            app:layout_constraintBottom_toTopOf="@+id/edt_name"
+            android:id="@+id/imgProduct"
+            android:layout_width="323dp"
+            android:layout_height="173dp"
+            app:layout_constraintBottom_toTopOf="@+id/txt_name"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.573"
+            app:layout_constraintHorizontal_bias="0.548"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.65"
+            app:layout_constraintVertical_bias="0.632"
             app:srcCompat="@drawable/create_store" />
 
         <TextView
@@ -122,38 +91,38 @@
             android:textSize="18dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.056"
+            app:layout_constraintHorizontal_bias="0.047"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.404" />
+            app:layout_constraintVertical_bias="0.421" />
 
         <TextView
             android:id="@+id/textView11"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Địa chỉ"
+            android:text="Code"
             android:textColor="#33907C"
             android:textSize="18dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.044"
+            app:layout_constraintHorizontal_bias="0.047"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.476" />
+            app:layout_constraintTop_toBottomOf="@+id/textView10"
+            app:layout_constraintVertical_bias="0.142" />
 
         <TextView
             android:id="@+id/textView12"
             android:layout_width="wrap_content"
             android:layout_height="28dp"
-            android:text="Sđt:"
+            android:text="Giá"
             android:textColor="#33907C"
             android:textSize="20dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.041"
+            app:layout_constraintHorizontal_bias="0.047"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.555" />
+            app:layout_constraintTop_toBottomOf="@+id/textView11"
+            app:layout_constraintVertical_bias="0.17" />
 
         <TextView
             android:id="@+id/textView3"
@@ -164,75 +133,62 @@
             android:textSize="20dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.043"
+            app:layout_constraintHorizontal_bias="0.047"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.634" />
+            app:layout_constraintTop_toBottomOf="@+id/textView6"
+            app:layout_constraintVertical_bias="0.305" />
 
-        <EditText
-            android:id="@+id/edt_name"
+        <TextView
+            android:paddingTop="15dp"
+            android:id="@+id/txt_name"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:backgroundTint="#33907C"
             android:ems="10"
             android:hint="Nhập tên cửa hàng"
-            android:inputType="textPersonName"
             android:minHeight="48dp"
+            android:text="Tên cửa hàng"
             android:textSize="18dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.943"
+            app:layout_constraintHorizontal_bias="0.938"
             app:layout_constraintStart_toEndOf="@+id/textView10"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.398" />
+            app:layout_constraintVertical_bias="0.418" />
 
-        <EditText
-            android:id="@+id/edt_add"
+        <TextView
+            android:paddingTop="10dp"
+            android:id="@+id/txt_code"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:backgroundTint="#33907C"
             android:ems="10"
-            android:hint="Nhập địa chỉ cửa hàng"
-            android:inputType="textPersonName"
             android:minHeight="48dp"
+            android:text="add"
+            android:textSize="18dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.911"
+            app:layout_constraintHorizontal_bias="0.918"
             app:layout_constraintStart_toEndOf="@+id/textView11"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.48" />
+            app:layout_constraintTop_toBottomOf="@+id/txt_name"
+            app:layout_constraintVertical_bias="0.096" />
 
-        <EditText
-            android:id="@+id/edt_phone"
+        <TextView
+            android:paddingTop="15dp"
+            android:id="@+id/txt_price"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:backgroundTint="#33907C"
             android:ems="10"
-            android:hint="Nhập điện thoại"
-            android:inputType="textPersonName"
             android:minHeight="48dp"
+            android:text="add"
             android:textSize="18dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.965"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.562" />
-
-        <Button
-            android:id="@+id/btn_create"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/custom_button1"
-            android:text="Chỉnh sửa "
-            android:textColor="@color/white"
-            android:textSize="20dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.518"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.933" />
+            app:layout_constraintTop_toBottomOf="@+id/txt_code"
+            app:layout_constraintVertical_bias="0.083" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -240,12 +196,12 @@
         android:id="@+id/textView9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Chỉnh sửa cửa hàng của bạn"
+        android:text="Tạo cửa hàng của bạn"
         android:textColor="@color/white"
         android:textSize="25dp"
         app:layout_constraintBottom_toBottomOf="@+id/constraintLayout2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintHorizontal_bias="0.672"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.05" />
@@ -256,7 +212,7 @@
         android:layout_height="36dp"
         app:layout_constraintBottom_toBottomOf="@+id/constraintLayout2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.01"
+        app:layout_constraintHorizontal_bias="0.05"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.05"

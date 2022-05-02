@@ -37,7 +37,7 @@
             app:layout_constraintVertical_bias="0.73" />
 
         <EditText
-            android:id="@+id/edt_discount"
+            android:id="@+id/edt_discount2"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:backgroundTint="#33907C"
@@ -54,7 +54,7 @@
             app:layout_constraintVertical_bias="0.599" />
 
         <EditText
-            android:id="@+id/edt_email2"
+            android:id="@+id/edt_img2"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:backgroundTint="#33907C"
@@ -99,7 +99,7 @@
             app:layout_constraintVertical_bias="0.594" />
 
         <EditText
-            android:id="@+id/edt_Price"
+            android:id="@+id/edt_Price2"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:backgroundTint="#33907C"
@@ -116,7 +116,7 @@
             app:layout_constraintVertical_bias="0.475" />
 
         <EditText
-            android:id="@+id/edt_description"
+            android:id="@+id/edt_description2"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:backgroundTint="#33907C"
@@ -190,7 +190,7 @@
             app:layout_constraintVertical_bias="0.363" />
 
         <EditText
-            android:id="@+id/edt_name"
+            android:id="@+id/edt_name2"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:backgroundTint="#33907C"
@@ -207,7 +207,7 @@
             app:layout_constraintVertical_bias="0.11" />
 
         <EditText
-            android:id="@+id/edt_code"
+            android:id="@+id/edt_code2"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:backgroundTint="#33907C"
@@ -223,7 +223,7 @@
             app:layout_constraintVertical_bias="0.225" />
 
         <Button
-            android:id="@+id/btn_create"
+            android:id="@+id/btn_create2"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:background="@drawable/custom_button1"
