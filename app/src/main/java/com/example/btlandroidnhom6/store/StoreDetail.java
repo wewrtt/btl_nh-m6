@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.btlandroidnhom6.Home.MainActivity;
 import com.example.btlandroidnhom6.R;
 import com.example.btlandroidnhom6.model.Product;
 import com.example.btlandroidnhom6.model.Store;
@@ -28,7 +30,9 @@ public class StoreDetail extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_store_detail);
         anhxa();
-        Store store= StoreHome.storeList.get((Integer) this.getIntent().getExtras().get("position"));
+        int position= (int) this.getIntent().getExtras().get("position");
+        Toast.makeText(this, "Oke la "+position+" ", Toast.LENGTH_SHORT).show();
+        Store store= MainActivity.storeList.get(position);
         txt_name.setText(store.getName());
         txt_add.setText(store.getAddress());
         txt_phone.setText(store.getPhoneNumber()+"");

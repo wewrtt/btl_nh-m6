@@ -21,7 +21,7 @@ import retrofit2.http.Path;
 // .baseUrl("http://")192.168.1.101:8080 kết nói ko wifi
 public interface APIService {
     APIService apiService= new Retrofit.Builder()
-            .baseUrl("http://192.168.0.107:3000")
+            .baseUrl("http://192.168.0.104:3000")
             .addConverterFactory(GsonConverterFactory.create())
             .build().create(APIService.class);
     //Login-Logout
@@ -47,7 +47,7 @@ public interface APIService {
     @GET("/san-pham/{id}")
     Call<Respone> getProduct(@Path("id") String id);
     @PUT("/san-pham/{id}")
-    Call<Respone> putProduct(@Path("id") String id);
+    Call<Respone> putProduct(@Path("id") String id,Product product);
     @DELETE("/san-pham/{id}")
     Call<Respone> deleteProduct(@Path("id") String id);
     @POST("/san-pham")

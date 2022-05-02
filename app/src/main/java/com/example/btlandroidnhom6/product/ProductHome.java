@@ -5,8 +5,10 @@ import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Parcelable;
@@ -19,12 +21,20 @@ import android.widget.Toast;
 
 import com.example.btlandroidnhom6.Home.MainActivity;
 import com.example.btlandroidnhom6.R;
+import com.example.btlandroidnhom6.api.APIService;
 import com.example.btlandroidnhom6.model.Product;
+import com.example.btlandroidnhom6.model.Respone;
 import com.example.btlandroidnhom6.model.Store;
+import com.example.btlandroidnhom6.store.EditStore;
+import com.example.btlandroidnhom6.store.StoreHome;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class ProductHome extends AppCompatActivity {
     private Store store;
@@ -71,6 +81,45 @@ public class ProductHome extends AppCompatActivity {
                 startActivity(i);
             }
         });
+        gridView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+
+                AlertDialog.Builder alerb= new AlertDialog.Builder(ProductHome.this);
+                alerb.setTitle("Chỉnh sửa thông tin sản phẩm");
+                alerb.setPositiveButton("Chỉnh sửa ", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Intent i = new Intent(ProductHome.this, EditProduct.class);
+                        i.putExtra("infoProduct",listProduct.get(position));
+                        i.putExtra("position",position);
+                        activityResultLauncher.launch(i);
+                    }
+                });
+                alerb.setNegativeButton("Xóa", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        APIService.apiService.deleteProduct(listProduct.get(position).get_id()).enqueue(new Callback<Respone>() {
+                            @Override
+                            public void onResponse(Call<Respone> call, Response<Respone> response) {
+                            }
+
+                            @Override
+                            public void onFailure(Call<Respone> call, Throwable t) {
+                                Toast.makeText(ProductHome.this, "Server Error!!", Toast.LENGTH_SHORT).show();
+                            }
+                        });
+                        listProduct.remove(position);
+                        adapter.notifyDataSetChanged();
+                    }
+                });
+                AlertDialog alertDialog= alerb.create();
+                alertDialog.show();
+                return true;
+            }
+
+        });
     }
 
     private ActivityResultLauncher<Intent> activityResultLauncher =  registerForActivityResult(
@@ -81,6 +130,14 @@ public class ProductHome extends AppCompatActivity {
                         Intent i = result.getData();
                         listProduct = (List<Product>) i.getExtras().get("listProduct");
                         adapter.notifyDataSetChanged();
+                    }
+                    else if(result.getResultCode()==702){
+                        Intent i=result.getData();
+                        Product a1= (Product) i.getExtras().get("infoProduct");
+                        int position= (int) i.getExtras().get("position");
+                        listProduct.set(position,a1);
+                        adapter.notifyDataSetChanged();
+                        Toast.makeText(ProductHome.this, "Oke la la la", Toast.LENGTH_SHORT).show();
                     }
 
                 }

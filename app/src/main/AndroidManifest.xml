@@ -43,6 +43,9 @@
             android:name=".store.StoreHome"
             android:exported="false" />
         <activity
+            android:name=".store.StoreDetail"
+            android:exported="false" />
+        <activity
             android:name=".welcome.Test_Screem"
             android:exported="false" />
         <activity
@@ -57,6 +60,9 @@
 
         <activity
             android:name=".product.ProductDetail"
+            android:exported="false" />
+        <activity
+            android:name=".product.EditProduct"
             android:exported="false" />
         <activity
             android:name=".Welcome"

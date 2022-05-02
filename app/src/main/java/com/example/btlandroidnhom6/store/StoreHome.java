@@ -36,7 +36,7 @@ import retrofit2.Response;
 public class StoreHome extends AppCompatActivity {
     private Button btn;
     private ImageView img_profile,img_home;
-   public static List<Store> storeList;
+    public static List<Store> storeList;
     private ListView listView;
     private ListviewAdapter adapter;
     private static final  String TAG=StoreHome.class.getSimpleName();
