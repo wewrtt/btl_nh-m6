@@ -3,6 +3,32 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/thanghd.B18AT239/AndroidStudioProjects/btl_nh-m6/app/src/main/res/layout/activity_add_product_for_store.xml" value="0.22" />
+        <entry key="..\:/Users/thanghd.B18AT239/AndroidStudioProjects/btl_nh-m6/app/src/main/res/layout/activity_create_product.xml" value="0.1796875" />
+        <entry key="..\:/Users/thanghd.B18AT239/AndroidStudioProjects/btl_nh-m6/app/src/main/res/layout/activity_create_store.xml" value="0.1796875" />
+        <entry key="..\:/Users/thanghd.B18AT239/AndroidStudioProjects/btl_nh-m6/app/src/main/res/layout/activity_edit_product.xml" value="0.1796875" />
+        <entry key="..\:/Users/thanghd.B18AT239/AndroidStudioProjects/btl_nh-m6/app/src/main/res/layout/activity_edit_product_owner.xml" value="0.1796875" />
+        <entry key="..\:/Users/thanghd.B18AT239/AndroidStudioProjects/btl_nh-m6/app/src/main/res/layout/activity_edit_store.xml" value="0.1796875" />
+        <entry key="..\:/Users/thanghd.B18AT239/AndroidStudioProjects/btl_nh-m6/app/src/main/res/layout/activity_find_password.xml" value="0.1796875" />
+        <entry key="..\:/Users/thanghd.B18AT239/AndroidStudioProjects/btl_nh-m6/app/src/main/res/layout/activity_home_store.xml" value="0.1796875" />
+        <entry key="..\:/Users/thanghd.B18AT239/AndroidStudioProjects/btl_nh-m6/app/src/main/res/layout/activity_list_product.xml" value="0.1796875" />
+        <entry key="..\:/Users/thanghd.B18AT239/AndroidStudioProjects/btl_nh-m6/app/src/main/res/layout/activity_login.xml" value="0.1796875" />
+        <entry key="..\:/Users/thanghd.B18AT239/AndroidStudioProjects/btl_nh-m6/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Users/thanghd.B18AT239/AndroidStudioProjects/btl_nh-m6/app/src/main/res/layout/activity_manage_product.xml" value="0.22" />
+        <entry key="..\:/Users/thanghd.B18AT239/AndroidStudioProjects/btl_nh-m6/app/src/main/res/layout/activity_product_detail.xml" value="0.1" />
+        <entry key="..\:/Users/thanghd.B18AT239/AndroidStudioProjects/btl_nh-m6/app/src/main/res/layout/activity_profile_home.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/thanghd.B18AT239/AndroidStudioProjects/btl_nh-m6/app/src/main/res/layout/activity_registor.xml" value="0.1796875" />
+        <entry key="..\:/Users/thanghd.B18AT239/AndroidStudioProjects/btl_nh-m6/app/src/main/res/layout/activity_store_detail.xml" value="0.1796875" />
+        <entry key="..\:/Users/thanghd.B18AT239/AndroidStudioProjects/btl_nh-m6/app/src/main/res/layout/activity_test_screem.xml" value="0.1796875" />
+        <entry key="..\:/Users/thanghd.B18AT239/AndroidStudioProjects/btl_nh-m6/app/src/main/res/layout/activity_thongke_chain_store.xml" value="0.1796875" />
+        <entry key="..\:/Users/thanghd.B18AT239/AndroidStudioProjects/btl_nh-m6/app/src/main/res/layout/activity_thongke_store.xml" value="0.1796875" />
+        <entry key="..\:/Users/thanghd.B18AT239/AndroidStudioProjects/btl_nh-m6/app/src/main/res/layout/activity_welcom2.xml" value="0.1796875" />
+        <entry key="..\:/Users/thanghd.B18AT239/AndroidStudioProjects/btl_nh-m6/app/src/main/res/layout/cuahang.xml" value="0.1537037037037037" />
+        <entry key="..\:/Users/thanghd.B18AT239/AndroidStudioProjects/btl_nh-m6/app/src/main/res/layout/iteam_photo.xml" value="0.1796875" />
+        <entry key="..\:/Users/thanghd.B18AT239/AndroidStudioProjects/btl_nh-m6/app/src/main/res/layout/layout_item_rows.xml" value="0.1796875" />
+        <entry key="..\:/Users/thanghd.B18AT239/AndroidStudioProjects/btl_nh-m6/app/src/main/res/layout/product.xml" value="0.1796875" />
+        <entry key="..\:/Users/thanghd.B18AT239/AndroidStudioProjects/btl_nh-m6/app/src/main/res/layout/welcome.xml" value="0.1796875" />
+        <entry key="..\:/Users/thanghd.B18AT239/AndroidStudioProjects/btl_nh-m6/app/src/main/res/menu/menu_home.xml" value="0.1" />
         <entry key="..\:/btlAndroidNhom4/app/src/main/res/drawable/botron.xml" value="0.122" />
         <entry key="..\:/btlAndroidNhom4/app/src/main/res/drawable/custom_button.xml" value="0.123" />
         <entry key="..\:/btlAndroidNhom4/app/src/main/res/drawable/custom_button_login.xml" value="0.1" />

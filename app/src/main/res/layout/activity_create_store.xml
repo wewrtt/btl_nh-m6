@@ -11,9 +11,9 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout2"
         android:layout_width="416dp"
-        android:layout_height="647dp"
+        android:layout_height="700dp"
         android:layout_marginTop="100dp"
-        android:background="@color/white"
+        android:background="#FFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -23,7 +23,7 @@
 
 
         <EditText
-            android:id="@+id/edt_email2"
+            android:id="@+id/edt_email21"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:backgroundTint="#33907C"
@@ -68,7 +68,7 @@
             app:layout_constraintVertical_bias="0.793" />
 
         <EditText
-            android:id="@+id/edt_email"
+            android:id="@+id/edt_email1"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:backgroundTint="#33907C"
@@ -85,7 +85,7 @@
             app:layout_constraintVertical_bias="0.726" />
 
         <EditText
-            android:id="@+id/edt_description"
+            android:id="@+id/edt_description1"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:backgroundTint="#33907C"
@@ -103,14 +103,14 @@
 
         <ImageView
             android:id="@+id/imageView2"
-            android:layout_width="300dp"
-            android:layout_height="200dp"
+            android:layout_width="323dp"
+            android:layout_height="173dp"
             app:layout_constraintBottom_toTopOf="@+id/edt_name"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.568"
+            app:layout_constraintHorizontal_bias="0.548"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.421"
+            app:layout_constraintVertical_bias="0.632"
             app:srcCompat="@drawable/create_store" />
 
         <TextView
@@ -170,7 +170,7 @@
             app:layout_constraintVertical_bias="0.634" />
 
         <EditText
-            android:id="@+id/edt_name"
+            android:id="@+id/edt_name1"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:backgroundTint="#33907C"
@@ -187,7 +187,7 @@
             app:layout_constraintVertical_bias="0.398" />
 
         <EditText
-            android:id="@+id/edt_add"
+            android:id="@+id/edt_add1"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:backgroundTint="#33907C"
@@ -203,7 +203,7 @@
             app:layout_constraintVertical_bias="0.48" />
 
         <EditText
-            android:id="@+id/edt_Phone"
+            android:id="@+id/edt_Phone1"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:backgroundTint="#33907C"
@@ -220,7 +220,7 @@
             app:layout_constraintVertical_bias="0.562" />
 
         <Button
-            android:id="@+id/btn_create"
+            android:id="@+id/btn_create1"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:background="@drawable/custom_button1"
@@ -229,10 +229,10 @@
             android:textSize="20dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.555"
+            app:layout_constraintHorizontal_bias="0.518"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.943" />
+            app:layout_constraintVertical_bias="0.933" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -243,12 +243,12 @@
         android:text="Tạo cửa hàng của bạn"
         android:textColor="@color/white"
         android:textSize="25dp"
-        app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
+        app:layout_constraintBottom_toBottomOf="@+id/constraintLayout2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintHorizontal_bias="0.672"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.686" />
+        app:layout_constraintVertical_bias="0.05" />
 
     <ImageView
         android:id="@+id/img_arrow"
@@ -256,10 +256,10 @@
         android:layout_height="36dp"
         app:layout_constraintBottom_toBottomOf="@+id/constraintLayout2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.002"
+        app:layout_constraintHorizontal_bias="0.05"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.047"
+        app:layout_constraintVertical_bias="0.05"
         app:srcCompat="@drawable/ic_baseline_arrow_back_24" />
 
 

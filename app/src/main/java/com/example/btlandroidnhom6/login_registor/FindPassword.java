@@ -49,23 +49,23 @@ public class FindPassword extends AppCompatActivity {
             }
         });
     }
-    public void click_button(User user){
-       APIService.apiService.findPassword(user).enqueue(new Callback<Respone>() {
-           @Override
-           public void onResponse(Call<Respone> call, Response<Respone> response) {
-               Respone res= response.body();
-               if(res.getStatusCode() == 200){
-                   Toast.makeText(FindPassword.this,"check your eamil for get password",Toast.LENGTH_LONG).show();
-               }
-               else {
-                   Toast.makeText(FindPassword.this,"userName or email incorrect",Toast.LENGTH_LONG).show();
-               }
-           }
-
-           @Override
-           public void onFailure(Call<Respone> call, Throwable t) {
-
-           }
-       });
-    };
+   public void click_button(User user){
+//       APIService.apiService.findPassword(user).enqueue(new Callback<Respone>() {
+//           @Override
+//           public void onResponse(Call<Respone> call, Response<Respone> response) {
+//               Respone res= response.body();
+//               if(res.getStatusCode() == 200){
+//                   Toast.makeText(FindPassword.this,"check your eamil for get password",Toast.LENGTH_LONG).show();
+//               }
+//               else {
+//                   Toast.makeText(FindPassword.this,"userName or email incorrect",Toast.LENGTH_LONG).show();
+//               }
+//           }
+//
+//           @Override
+//           public void onFailure(Call<Respone> call, Throwable t) {
+//
+//           }
+//       });
+ };
 }

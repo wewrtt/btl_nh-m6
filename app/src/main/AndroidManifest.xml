@@ -10,12 +10,28 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.BtlAndroidNhom6">
+        android:theme="@style/Theme.BtlAndroidNhom6"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".store.AddProductForStore"
+            android:exported="false" />
+        <activity
+            android:name=".product.EditProductOwner"
+            android:exported="false" />
+        <activity
+            android:name=".store.EditStore"
+            android:exported="false" />
+        <activity
+            android:name=".thongke.BieuDoduong"
+            android:exported="false" />
+        <activity
+            android:name=".thongke.ThongKeCuaHang"
+            android:exported="false" />
         <activity
             android:name=".product.CreateProduct"
             android:exported="false" />
         <activity
-            android:name=".product.ListProduct"
+            android:name=".product.ProductHome"
             android:exported="false" />
         <activity
             android:name=".login_registor.FindPassword"
@@ -33,6 +49,9 @@
             android:name=".store.StoreHome"
             android:exported="false" />
         <activity
+            android:name=".store.StoreDetail"
+            android:exported="false" />
+        <activity
             android:name=".welcome.Test_Screem"
             android:exported="false" />
         <activity
@@ -43,6 +62,15 @@
             android:exported="false" />
         <activity
             android:name=".welcome.Welcom2"
+            android:exported="false" />
+        <activity
+            android:name=".product.ProductDetail"
+            android:exported="false" />
+        <activity
+            android:name=".product.EditProduct"
+            android:exported="false" />
+        <activity
+            android:name=".product.ManageProduct"
             android:exported="false" />
         <activity
             android:name=".Welcome"

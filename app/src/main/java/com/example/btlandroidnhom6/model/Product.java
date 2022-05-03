@@ -9,12 +9,12 @@ public class Product implements Serializable {
      private String images;
      private String description;
      private int price;
-     private Float discount;
+     private int quantity;
      private boolean isHot;
      private List<String> listCategoryId;
-     private String storeId;
-
-     public Product() {
+     private String userId;
+     private String _id;
+    public Product() {
      }
 
     public Product(String name, String images, String description, int price) {
@@ -24,16 +24,16 @@ public class Product implements Serializable {
         this.price = price;
     }
 
-    public Product(String name, String codeProduct, String images, String description, int price, Float discount, boolean isHot, List<String> listCategoryId, String storeId) {
+    public Product(String name, String codeProduct, String images, String description, int price, int quantity, boolean isHot, List<String> listCategoryId, String userId) {
         this.name = name;
         this.codeProduct = codeProduct;
         this.images = images;
         this.description = description;
         this.price = price;
-        this.discount = discount;
+        this.quantity = quantity;
         this.isHot = isHot;
         this.listCategoryId = listCategoryId;
-        this.storeId = storeId;
+        this.userId = userId;
      }
 
      public String getName() {
@@ -76,15 +76,15 @@ public class Product implements Serializable {
         this.price = price;
     }
 
-     public Float getDiscount() {
-        return discount;
+    public int getQuantity() {
+        return quantity;
     }
 
-     public void setDiscount(Float discount) {
-        this.discount = discount;
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 
-     public boolean isHot() {
+    public boolean isHot() {
         return isHot;
     }
 
@@ -96,16 +96,24 @@ public class Product implements Serializable {
         return listCategoryId;
     }
 
-     public void setListCategoryId(List<String> listCategoryId) {
+    public String get_id() {
+        return _id;
+    }
+
+    public void set_id(String _id) {
+        this._id = _id;
+    }
+
+    public void setListCategoryId(List<String> listCategoryId) {
         this.listCategoryId = listCategoryId;
      }
 
-     public String getStoreId() {
-        return storeId;
+     public String getUserId() {
+        return userId;
     }
 
-     public void setStoreId(String storeId) {
-        this.storeId = storeId;
+     public void setUserId(String userId) {
+        this.userId = userId;
     }
 
 }

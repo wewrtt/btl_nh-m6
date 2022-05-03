@@ -3,9 +3,10 @@ package com.example.btlandroidnhom6.model;
 import java.io.Serializable;
 
 public class Store implements Serializable {
-    private String address,description,email,isRoot,name,phoneNumber,userId,imageUrl,_id;
+    private String address,description,email,name,phoneNumber,userId,imageUrl,_id;
+    private Boolean isRoot;
 
-    public Store(String address, String description, String email, String isRoot, String name, String phoneNumber, String userId, String imageUrl) {
+    public Store(String address, String description, String email, Boolean isRoot, String name, String phoneNumber, String userId, String imageUrl) {
         this.address = address;
         this.description = description;
         this.email = email;
@@ -15,6 +16,7 @@ public class Store implements Serializable {
         this.userId = userId;
         this.imageUrl = imageUrl;
     }
+
     public Store() {
 
     }
@@ -51,12 +53,12 @@ public class Store implements Serializable {
         this.email = email;
     }
 
-    public String getIsRoot() {
+    public Boolean getRoot() {
         return isRoot;
     }
 
-    public void setIsRoot(String isRoot) {
-        this.isRoot = isRoot;
+    public void setRoot(Boolean root) {
+        isRoot = root;
     }
 
     public String getName() {
