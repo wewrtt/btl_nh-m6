@@ -16,7 +16,7 @@ import com.github.mikephil.charting.utils.ColorTemplate;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BieuDoduong extends AppCompatActivity {
+public class ThongKeTheoNgay extends AppCompatActivity {
     private BarChart barChart ;
     private List<Float> label= new ArrayList<>();
     private List<Float> value= new ArrayList<>();

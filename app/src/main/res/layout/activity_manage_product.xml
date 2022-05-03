@@ -23,8 +23,8 @@
 
     <GridView
         android:id="@+id/GridView_ListProduct"
-        android:layout_width="414dp"
-        android:layout_height="546dp"
+        android:layout_width="406dp"
+        android:layout_height="590dp"
         android:background="@color/white"
         android:numColumns="2"
         app:layout_constraintBottom_toBottomOf="parent"

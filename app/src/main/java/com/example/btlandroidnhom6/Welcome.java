@@ -29,8 +29,6 @@ public class Welcome extends AppCompatActivity {
     public  final  static  String TAG = Welcome.class.getSimpleName();
     public void anhXa(){
         btn= findViewById(R.id.btn_next);
-        btn2=findViewById(R.id.btn_test);
-        btn_api = findViewById(R.id.btn_testApi);
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,24 +42,6 @@ public class Welcome extends AppCompatActivity {
                 startActivity(i);
             }
         });
-        btn2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Log.e("registor","here");
-                getAllProduct();
-//                Intent i= new Intent(Welcome.this, ManageProduct.class);
-//                startActivity(i);
-            }
-        });
-        btn_api.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i= new Intent(Welcome.this, MainActivity.class);
-                startActivity(i);
-
-            }
-        });
-
     }
     public  List<Product> getAllProduct() {
         APIService.apiService.getAllProduct(LoginActivity.mainUser.get_id()).enqueue(new Callback<ResponeProduct>() {
@@ -74,7 +54,6 @@ public class Welcome extends AppCompatActivity {
                     startActivity(i);
                 }
             }
-
             @Override
             public void onFailure(Call<ResponeProduct> call, Throwable t) {
 

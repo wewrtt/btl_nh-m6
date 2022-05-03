@@ -24,7 +24,7 @@ import retrofit2.http.Path;
 // .baseUrl("http://")192.168.1.101:8080 kết nói ko wifi
 public interface APIService {
     APIService apiService= new Retrofit.Builder()
-            .baseUrl("https://a669-113-22-94-208.ap.ngrok.io")
+            .baseUrl("https://551e-113-22-94-208.ap.ngrok.io/")
             .addConverterFactory(GsonConverterFactory.create())
             .build().create(APIService.class);
     //Login-Logout

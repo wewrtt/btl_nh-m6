@@ -32,6 +32,7 @@
         android:layout_width="270dp"
         android:layout_height="48dp"
         android:layout_marginTop="12dp"
+        android:textColor="@color/white"
         android:background="@drawable/customedittext"
         android:hint="@string/prompt_password"
         android:imeActionLabel="@string/action_sign_in_short"
@@ -111,6 +112,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView"
         app:layout_constraintVertical_bias="0.072" />
 
+
     <TextView
         android:id="@+id/txt_re"
         android:layout_width="283dp"
@@ -121,24 +123,9 @@
         android:textColor="#fff"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.546"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/findPassWord"
-        app:layout_constraintVertical_bias="0.153" />
-
-    <TextView
-        android:id="@+id/findPassWord"
-        android:layout_width="231dp"
-        android:layout_height="39dp"
-        android:fontFamily="monospace"
-        android:gravity="center"
-        android:text="Quên mật khẩu"
-        android:textColor="#fff"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_login"
-        app:layout_constraintVertical_bias="0.179" />
+        app:layout_constraintVertical_bias="0.145" />
 
     <CheckBox
         android:id="@+id/checkBox"

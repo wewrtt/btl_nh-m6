@@ -16,6 +16,9 @@ import com.example.btlandroidnhom6.login_registor.LoginActivity;
 import com.example.btlandroidnhom6.model.Category;
 import com.example.btlandroidnhom6.model.Product;
 import com.example.btlandroidnhom6.model.Respone;
+import com.example.btlandroidnhom6.model.Store;
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -59,6 +62,12 @@ public class CreateProduct extends AppCompatActivity {
                 APIService.apiService.postProduct(product).enqueue(new Callback<Respone>() {
                     @Override
                     public void onResponse(Call<Respone> call, Response<Respone> response) {
+                        Respone respone = response.body();
+                        Object res= respone.getData();
+                        Gson gson= new Gson();
+                        JsonObject jsonObject = gson.toJsonTree(res).getAsJsonObject();
+                        Product s = gson.fromJson(jsonObject, Product.class);
+                        product.set_id(s.get_id());
                         Intent i= new Intent();
                         i.putExtra("product",product);
                         setResult(701,i);

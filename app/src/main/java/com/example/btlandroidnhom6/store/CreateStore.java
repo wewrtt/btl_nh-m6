@@ -16,6 +16,9 @@ import com.example.btlandroidnhom6.api.APIService;
 import com.example.btlandroidnhom6.login_registor.LoginActivity;
 import com.example.btlandroidnhom6.model.Respone;
 import com.example.btlandroidnhom6.model.Store;
+import com.example.btlandroidnhom6.model.User;
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -48,7 +51,13 @@ public class CreateStore extends AppCompatActivity {
                 APIService.apiService.postStore(a1).enqueue(new Callback<Respone>() {
                     @Override
                     public void onResponse(Call<Respone> call, Response<Respone> response) {
+                        Respone respone = response.body();
+                        Object res= respone.getData();
+                        Gson gson= new Gson();
+                        JsonObject jsonObject = gson.toJsonTree(res).getAsJsonObject();
+                        Store s = gson.fromJson(jsonObject, Store.class);
                         Intent i= new Intent();
+                        a1.set_id(s.get_id());
                         Log.e("aaa",a1.getName());
                         i.putExtra("store",a1);
                         setResult(700,i);

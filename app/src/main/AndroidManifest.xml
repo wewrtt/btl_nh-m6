@@ -22,7 +22,7 @@
             android:name=".store.EditStore"
             android:exported="false" />
         <activity
-            android:name=".thongke.BieuDoduong"
+            android:name=".thongke.ThongKeTheoNgay"
             android:exported="false" />
         <activity
             android:name=".thongke.ThongKeCuaHang"

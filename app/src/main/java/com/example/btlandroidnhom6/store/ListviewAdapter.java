@@ -61,9 +61,9 @@ public class ListviewAdapter extends BaseAdapter {
         else viewHolder =(ViewHolder) convertView.getTag();
         Picasso.get().load(listStore.get(position).getImageUrl()).into(viewHolder.img);
         viewHolder.txtDiaChi.setText(listStore.get(position).getAddress());
-        viewHolder.txtDoanhThu.setText(listStore.get(position).getEmail()+"");
-        viewHolder.txtLoaiHang.setText(listStore.get(position).getDescription());
-        viewHolder.txtQuanLy.setText(listStore.get(position).getPhoneNumber());
+        viewHolder.txtDoanhThu.setText(listStore.get(position).getPhoneNumber());
+        viewHolder.txtLoaiHang.setText(listStore.get(position).getEmail());
+        viewHolder.txtQuanLy.setText(listStore.get(position).getName());
 
         return convertView;
     }

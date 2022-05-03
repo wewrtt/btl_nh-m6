@@ -36,7 +36,7 @@ import com.example.btlandroidnhom6.model.User;
 import com.example.btlandroidnhom6.profile.ProfileHome;
 import com.example.btlandroidnhom6.store.StoreDetail;
 import com.example.btlandroidnhom6.store.StoreHome;
-import com.example.btlandroidnhom6.thongke.BieuDoduong;
+import com.example.btlandroidnhom6.thongke.ThongKeTheoNgay;
 import com.example.btlandroidnhom6.thongke.ThongKeCuaHang;
 import com.google.android.material.navigation.NavigationView;
 
@@ -105,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(MainActivity.this, StoreHome.class);
-                startActivityForResult(i,REQUEST_CODE_EXAMPLE);
+                activityResultLauncher.launch(i);
             }
         });
         img_stock.setOnClickListener(new View.OnClickListener() {
@@ -146,7 +146,7 @@ public class MainActivity extends AppCompatActivity {
                         List<Float> label= newRespone.getLabel();
                         List<Float> value= newRespone.getValue();
                         String title= newRespone.getTitle();
-                        Intent i = new Intent(MainActivity.this,BieuDoduong.class);
+                        Intent i = new Intent(MainActivity.this, ThongKeTheoNgay.class);
                         i.putExtra("label", (Serializable) label);
                         i.putExtra("value", (Serializable) value);
                         i.putExtra("title", (Serializable) title);
@@ -244,7 +244,9 @@ public class MainActivity extends AppCompatActivity {
             new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
                 @Override
                 public void onActivityResult(ActivityResult result) {
-
+                    if(result.getResultCode()==600){
+                        adapter.notifyDataSetChanged();
+                    }
 
                 }
             }

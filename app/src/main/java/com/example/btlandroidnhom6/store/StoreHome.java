@@ -164,54 +164,12 @@ public class StoreHome extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i= new Intent();
-                setResult(MainActivity.RESULT_OK,i);
+                setResult(600,i);
                 finish();
             }
         });
     }
 
-//    @Override
-//    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-//        super.onActivityResult(requestCode, resultCode, data);
-//        if(requestCode == REQUEST_CODE_EXAMPLE) {
-//            // resultCode được set bởi DetailActivity
-//            // RESULT_OK chỉ ra rằng kết quả này đã thành công
-//            if(resultCode == EditStore.RESULT_OK) {
-//             adapter.notifyDataSetChanged();
-////                Intent intent = getIntent();
-////                finish();
-////                startActivity(intent);
-//            }
-//            else if(resultCode == 700){
-//                adapter.notifyDataSetChanged();
-////                Intent intent = getIntent();
-////                finish();
-////                startActivity(intent);
-//            }
-//            else {
-//                // DetailActivity không thành công, không có data trả về.
-//            }
-//        }
-//    }
-    public  List<Product> getAllProduct() {
-        APIService.apiService.getAllProduct(LoginActivity.mainUser.get_id()).enqueue(new Callback<ResponeProduct>() {
-            @Override
-            public void onResponse(Call<ResponeProduct> call, Response<ResponeProduct> response) {
-                ResponeProduct res = response.body();
-                if (res.getStatusCode() == 200) {
-                   productList = res.getData();
-                    Intent i= new Intent(StoreHome.this, ManageProduct.class);
-                    activityResultLauncher.launch(i);
-                }
-            }
-
-            @Override
-            public void onFailure(Call<ResponeProduct> call, Throwable t) {
-
-            }
-        });
-        return productList;
-    }
     private ActivityResultLauncher<Intent> activityResultLauncher =  registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
                 @Override
@@ -220,17 +178,15 @@ public class StoreHome extends AppCompatActivity {
                         Intent i = result.getData();
                         Store store = (Store) i.getExtras().get("store");
                         Log.e(TAG,store.getName());
-                        adapter.notifyDataSetChanged();
+                        storeList.add(store);
                     }
                     else if(result.getResultCode()==703){
                         Intent i = result.getData();
-
                         int positon= (int) i.getExtras().get("position");
                         Store store = (Store) i.getExtras().get("store");
                         storeList.set(positon,store);
-                        adapter.notifyDataSetChanged();
                     }
-
+                    adapter.notifyDataSetChanged();
                 }
             }
     );

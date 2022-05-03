@@ -49,7 +49,6 @@ public class LoginActivity extends AppCompatActivity {
     private static  final  String TAG= LoginActivity.class.getSimpleName();
 
     public  void anhXa(){
-        txt_findPassword=findViewById(R.id.findPassWord);
         edt_password= findViewById(R.id.password);
         edt_username = findViewById(R.id.username);
         btn_login=findViewById(R.id.btn_login);
@@ -130,14 +129,7 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
-        txt_findPassword.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Log.e("login","here");
-                Intent i = new Intent(LoginActivity.this, FindPassword.class);
-                startActivity(i);
-            }
-        });
+
     }
 
 }
