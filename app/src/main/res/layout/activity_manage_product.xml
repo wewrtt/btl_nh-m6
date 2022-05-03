@@ -5,14 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background"
-    tools:context=".product.ProductHome">
-
+    tools:context=".product.ManageProduct">
     <TextView
         android:id="@+id/textView9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Danh sách sản phẩm của cửa hàng"
+        android:text="Danh sách sản phẩm "
         android:textColor="@color/white"
         android:textSize="24dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -22,24 +21,21 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.045" />
 
-
     <GridView
         android:id="@+id/GridView_ListProduct"
-        android:layout_width="match_parent"
-        android:layout_height="600dp"
-        android:layout_marginTop="0dp"
+        android:layout_width="414dp"
+        android:layout_height="546dp"
         android:background="@color/white"
         android:numColumns="2"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textView13"
-        app:layout_constraintBottom_toBottomOf="parent"
-        />
+        app:layout_constraintTop_toBottomOf="@id/textView13" />
 
     <TextView
         android:id="@+id/textView13"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_width="458dp"
+        android:layout_height="140dp"
         android:background="@color/white"
         android:text="."
         app:layout_constraintBottom_toBottomOf="@+id/GridView_ListProduct"
@@ -48,8 +44,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.157" />
+
     <Button
-        android:id="@+id/btn_add"
+        android:id="@+id/btn_addMana"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:background="@drawable/custom_button1"
@@ -60,5 +57,5 @@
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView9"
-        app:layout_constraintVertical_bias="0.118" />
+        app:layout_constraintVertical_bias="0.119" />
 </androidx.constraintlayout.widget.ConstraintLayout>

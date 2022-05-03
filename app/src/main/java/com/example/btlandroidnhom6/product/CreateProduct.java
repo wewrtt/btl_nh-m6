@@ -27,10 +27,8 @@ import retrofit2.Response;
 
 public class CreateProduct extends AppCompatActivity {
     private EditText edt_name,edt_code,edt_description,edt_Price,edt_discount,edt_img;
-    private String store_id;
     private Button btn_create;
     private  static  final  String TAG= CreateProduct.class.getSimpleName();
-    private List<Product> listProduct;
     public  void anhxa(){
         edt_name = findViewById(R.id.edt_name2);
         edt_code = findViewById(R.id.edt_code2);
@@ -45,8 +43,6 @@ public class CreateProduct extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_product);
         anhxa();
-        store_id = (String) this.getIntent().getExtras().get("store_id");
-        listProduct = (List<Product>) this.getIntent().getExtras().get("listProduct");
         btn_create.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -55,21 +51,19 @@ public class CreateProduct extends AppCompatActivity {
                 String img = edt_img.getText().toString();
                 String description = edt_description.getText().toString();
                 int price = Integer.parseInt(edt_Price.getText().toString());
-                float discount = Float.parseFloat(edt_discount.getText().toString());
+                int discount = Integer.parseInt(edt_discount.getText().toString());
                 List<String> cat= new ArrayList<>();
                 cat.add("Trang sức");
                 cat.add("Thời trang nam");
-                Product product = new Product(name,codeProduct,img,description,price,discount,true,cat,store_id);
+                Product product = new Product(name,codeProduct,img,description,price,discount,true,cat,LoginActivity.mainUser.get_id());
                 APIService.apiService.postProduct(product).enqueue(new Callback<Respone>() {
                     @Override
                     public void onResponse(Call<Respone> call, Response<Respone> response) {
                         Intent i= new Intent();
-                        listProduct.add(product);
-                        i.putExtra("listProduct", (Serializable) listProduct);
+                        i.putExtra("product",product);
                         setResult(701,i);
                         finish();
                     }
-
                     @Override
                     public void onFailure(Call<Respone> call, Throwable t) {
                         Toast.makeText(CreateProduct.this, "Server Error!", Toast.LENGTH_SHORT).show();

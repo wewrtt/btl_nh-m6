@@ -6,6 +6,7 @@
     android:layout_height="300dp">
 
     <ImageView
+        android:layout_marginLeft="10dp"
         android:id="@+id/anh"
         android:layout_width="187dp"
         android:layout_height="156dp"
@@ -51,6 +52,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="36dp"
+        android:inputType="numberDecimal"
         android:text="giá"
         android:textSize="18dp"
         android:textColor="@color/black"

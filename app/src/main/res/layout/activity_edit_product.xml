@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#33907C"
-    tools:context=".store.StoreHome">
+    tools:context=".product.EditProduct">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -88,7 +88,7 @@
             android:id="@+id/textView7"
             android:layout_width="wrap_content"
             android:layout_height="28dp"
-            android:text="Discount"
+            android:text="Số lượng"
             android:textColor="#33907C"
             android:textSize="20dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -227,7 +227,7 @@
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:background="@drawable/custom_button1"
-            android:text="Sửa cửa hàng"
+            android:text="Sửa sản phẩm"
             android:textColor="@color/white"
             android:textSize="20dp"
             app:layout_constraintBottom_toBottomOf="parent"

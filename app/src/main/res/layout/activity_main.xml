@@ -124,10 +124,11 @@
                 app:layout_constraintVertical_bias="0.47" />
 
             <ImageView
+                android:id="@+id/stock"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_marginTop="12dp"
-                android:src="@drawable/ic_baseline_insert_chart_24"
+                android:src="@drawable/ic_baseline_museum_24"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.412"
@@ -314,6 +315,7 @@
                     app:srcCompat="@drawable/ic_baseline_pie_chart_24" />
 
                 <TextView
+                    android:layout_marginRight="5dp"
                     android:id="@+id/txt_thongke_store"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -342,7 +344,7 @@
                     android:id="@+id/txt_thongke_chainStore"
                     android:layout_width="190dp"
                     android:layout_height="wrap_content"
-                    android:text="Thống kê theo chuỗi của hàng"
+                    android:text="Thống kê theo cửa hàng"
                     android:textColor="#33907C"
                     android:textSize="18dp"
                     app:layout_constraintBottom_toBottomOf="parent"

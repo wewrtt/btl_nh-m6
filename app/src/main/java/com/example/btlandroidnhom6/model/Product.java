@@ -9,10 +9,10 @@ public class Product implements Serializable {
      private String images;
      private String description;
      private int price;
-     private float discount;
+     private int quantity;
      private boolean isHot;
      private List<String> listCategoryId;
-     private String storeId;
+     private String userId;
      private String _id;
     public Product() {
      }
@@ -24,16 +24,16 @@ public class Product implements Serializable {
         this.price = price;
     }
 
-    public Product(String name, String codeProduct, String images, String description, int price, float discount, boolean isHot, List<String> listCategoryId, String storeId) {
+    public Product(String name, String codeProduct, String images, String description, int price, int quantity, boolean isHot, List<String> listCategoryId, String userId) {
         this.name = name;
         this.codeProduct = codeProduct;
         this.images = images;
         this.description = description;
         this.price = price;
-        this.discount = discount;
+        this.quantity = quantity;
         this.isHot = isHot;
         this.listCategoryId = listCategoryId;
-        this.storeId = storeId;
+        this.userId = userId;
      }
 
      public String getName() {
@@ -76,15 +76,15 @@ public class Product implements Serializable {
         this.price = price;
     }
 
-     public float getDiscount() {
-        return discount;
+    public int getQuantity() {
+        return quantity;
     }
 
-     public void setDiscount(float discount) {
-        this.discount = discount;
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 
-     public boolean isHot() {
+    public boolean isHot() {
         return isHot;
     }
 
@@ -108,12 +108,12 @@ public class Product implements Serializable {
         this.listCategoryId = listCategoryId;
      }
 
-     public String getStoreId() {
-        return storeId;
+     public String getUserId() {
+        return userId;
     }
 
-     public void setStoreId(String storeId) {
-        this.storeId = storeId;
+     public void setUserId(String userId) {
+        this.userId = userId;
     }
 
 }

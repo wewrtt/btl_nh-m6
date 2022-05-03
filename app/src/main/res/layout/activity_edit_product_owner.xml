@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#33907C"
-    tools:context=".store.StoreHome">
+    tools:context=".product.EditProductOwner">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -37,12 +37,12 @@
             app:layout_constraintVertical_bias="0.73" />
 
         <EditText
-            android:id="@+id/edt_discount2"
+            android:id="@+id/edt_discount"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:backgroundTint="#33907C"
             android:ems="10"
-            android:hint="Nhập số lượng sản phẩm"
+            android:hint="Giảm giá (nếu có)"
             android:inputType="textPersonName"
             android:minHeight="48dp"
             android:textSize="18dp"
@@ -54,7 +54,7 @@
             app:layout_constraintVertical_bias="0.599" />
 
         <EditText
-            android:id="@+id/edt_img2"
+            android:id="@+id/edt_email2"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:backgroundTint="#33907C"
@@ -99,7 +99,7 @@
             app:layout_constraintVertical_bias="0.594" />
 
         <EditText
-            android:id="@+id/edt_Price2"
+            android:id="@+id/edt_Price"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:backgroundTint="#33907C"
@@ -116,7 +116,7 @@
             app:layout_constraintVertical_bias="0.475" />
 
         <EditText
-            android:id="@+id/edt_description2"
+            android:id="@+id/edt_description"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:backgroundTint="#33907C"
@@ -190,7 +190,7 @@
             app:layout_constraintVertical_bias="0.363" />
 
         <EditText
-            android:id="@+id/edt_name2"
+            android:id="@+id/edt_name"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:backgroundTint="#33907C"
@@ -207,7 +207,7 @@
             app:layout_constraintVertical_bias="0.11" />
 
         <EditText
-            android:id="@+id/edt_code2"
+            android:id="@+id/edt_code"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:backgroundTint="#33907C"
@@ -223,15 +223,16 @@
             app:layout_constraintVertical_bias="0.225" />
 
         <Button
-            android:id="@+id/btn_create2"
+            android:id="@+id/btn_create"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:background="@drawable/custom_button1"
-            android:text="Tạo sản phẩm"
+            android:text="Sửa sản phẩm"
             android:textColor="@color/white"
             android:textSize="20dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.513"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.908" />
@@ -257,12 +258,12 @@
         android:id="@+id/textView9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Tạo sản phẩm của bạn"
+        android:text="Chỉnh sửa sản phẩm của bạn"
         android:textColor="@color/white"
         android:textSize="25dp"
         app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintHorizontal_bias="0.8"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.5" />

@@ -1,6 +1,9 @@
 package com.example.btlandroidnhom6.Home;
 
-import androidx.annotation.Nullable;
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
@@ -16,24 +19,28 @@ import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.btlandroidnhom6.R;
 import com.example.btlandroidnhom6.api.APIService;
 import com.example.btlandroidnhom6.login_registor.LoginActivity;
 import com.example.btlandroidnhom6.model.Category;
-import com.example.btlandroidnhom6.model.ResponseStore;
+import com.example.btlandroidnhom6.model.NewRespone;
+import com.example.btlandroidnhom6.model.NewRespone1;
+import com.example.btlandroidnhom6.model.Product;
+import com.example.btlandroidnhom6.model.ResponeProduct;
 import com.example.btlandroidnhom6.model.Store;
 import com.example.btlandroidnhom6.model.StoreAdapter;
+import com.example.btlandroidnhom6.product.ManageProduct;
 import com.example.btlandroidnhom6.store.ListviewAdapter;
 import com.example.btlandroidnhom6.model.User;
 import com.example.btlandroidnhom6.profile.ProfileHome;
 import com.example.btlandroidnhom6.store.StoreDetail;
 import com.example.btlandroidnhom6.store.StoreHome;
-import com.example.btlandroidnhom6.thongke.thongkeChainStore;
-import com.example.btlandroidnhom6.thongke.thongkeStore;
+import com.example.btlandroidnhom6.thongke.BieuDoduong;
+import com.example.btlandroidnhom6.thongke.ThongKeCuaHang;
 import com.google.android.material.navigation.NavigationView;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -51,13 +58,14 @@ public class MainActivity extends AppCompatActivity {
     private TextView putin;
     private RecyclerView recyclerview;
     public static List<Category> categoryList;
+    public static  List<Product> listProduct= new ArrayList<>();
     private StoreAdapter cuahangadapt;
     private ListView listView;
     private ListviewAdapter adapter;
     private static final int REQUEST_CODE_EXAMPLE = 0x9345;
     private  TextView txt_store,txt_profile,txt_thongkestore,txt_thongkechainstore;
 
-    private ImageView img_store,img_account,img_fragment;
+    private ImageView img_store,img_account,img_stock;
 
     public void anhXa(){
         txt_store = findViewById(R.id.txt_store);
@@ -71,14 +79,11 @@ public class MainActivity extends AppCompatActivity {
         putin = findViewById(R.id.putin);
         img_store=findViewById(R.id.img_store);
         img_account=findViewById(R.id.img_accont);
+        img_stock = findViewById(R.id.stock);
         User u = new User();
         mainUser= (LoginActivity.mainUser != null) ? LoginActivity.mainUser:u;
         putin.setText(mainUser.getFullname()+"");
         storeList = LoginActivity.storeList;
-//        storeList.add(new Store("hanoi","a","a","a","a","a","a","a"));
-//        storeList.add(new Store("hadong","a","a","a","a","a","a","a"));
-//        storeList.add(new Store("hadong","a","a","a","a","a","a","a"));
-//        storeList.add(new Store("hadong","a","a","a","a","a","a","a"));
     }
     private void  actionToolBar(){
         setSupportActionBar(toolbar);
@@ -101,6 +106,12 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = new Intent(MainActivity.this, StoreHome.class);
                 startActivityForResult(i,REQUEST_CODE_EXAMPLE);
+            }
+        });
+        img_stock.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getAllProduct();
             }
         });
         img_account.setOnClickListener(new View.OnClickListener() {
@@ -128,15 +139,51 @@ public class MainActivity extends AppCompatActivity {
         txt_thongkestore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this, thongkeStore.class);
-                startActivityForResult(i,1);
+                APIService.apiService.getDoanhthuCuaHang(mainUser.get_id()).enqueue(new Callback<NewRespone>() {
+                    @Override
+                    public void onResponse(Call<NewRespone> call, Response<NewRespone> response) {
+                        NewRespone newRespone= (NewRespone) response.body();
+                        List<Float> label= newRespone.getLabel();
+                        List<Float> value= newRespone.getValue();
+                        String title= newRespone.getTitle();
+                        Intent i = new Intent(MainActivity.this,BieuDoduong.class);
+                        i.putExtra("label", (Serializable) label);
+                        i.putExtra("value", (Serializable) value);
+                        i.putExtra("title", (Serializable) title);
+                        startActivity(i);
+                    }
+
+                    @Override
+                    public void onFailure(Call<NewRespone> call, Throwable t) {
+                        Log.e(TAG,t.toString());
+                    }
+                });
             }
         });
         txt_thongkechainstore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this, thongkeChainStore.class);
-                startActivityForResult(i,2);
+
+                APIService.apiService.getDoanhthuChuoiCuaHang(mainUser.get_id()).enqueue(new Callback<NewRespone1>() {
+                    @Override
+                    public void onResponse(Call<NewRespone1> call, Response<NewRespone1> response) {
+                        NewRespone1 newRespone= (NewRespone1) response.body();
+                        List<String> label= newRespone.getLabel();
+                        List<Float> value= newRespone.getValue();
+                        String title= newRespone.getTitle();
+                        Intent i = new Intent(MainActivity.this, ThongKeCuaHang.class);
+                        i.putExtra("label", (Serializable) label);
+                        i.putExtra("value", (Serializable) value);
+                        i.putExtra("title", (Serializable) title);
+                        Log.e("AA",title);
+                        startActivity(i);
+                    }
+
+                    @Override
+                    public void onFailure(Call<NewRespone1> call, Throwable t) {
+                        Log.e(TAG,t.toString());
+                    }
+                });
             }
         });
         actionToolBar();
@@ -167,6 +214,25 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+    public  List<Product> getAllProduct() {
+        APIService.apiService.getAllProduct(LoginActivity.mainUser.get_id()).enqueue(new Callback<ResponeProduct>() {
+            @Override
+            public void onResponse(Call<ResponeProduct> call, Response<ResponeProduct> response) {
+                ResponeProduct res = response.body();
+                if (res.getStatusCode() == 200) {
+                    listProduct = res.getData();
+                    Intent i= new Intent(MainActivity.this, ManageProduct.class);
+                    activityResultLauncher.launch(i);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ResponeProduct> call, Throwable t) {
+                Log.e(TAG,"lỗi");
+            }
+        });
+        return listProduct;
+    }
     private void setcategory(ArrayList<Category> datalist) {
         RecyclerView.LayoutManager layoutmanager= new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false);
         recyclerview.setLayoutManager(layoutmanager);
@@ -174,21 +240,14 @@ public class MainActivity extends AppCompatActivity {
         recyclerview.setAdapter(cuahangadapt);
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode == REQUEST_CODE_EXAMPLE){
-            if(resultCode==MainActivity.RESULT_OK){
-                adapter.notifyDataSetChanged();
-//                Toast.makeText(this, "OKE nhé", Toast.LENGTH_SHORT).show();
-//                 Intent intent = getIntent();
-//                finish();
-//                startActivity(intent);
+    private ActivityResultLauncher<Intent> activityResultLauncher =  registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
+                @Override
+                public void onActivityResult(ActivityResult result) {
+
+
+                }
             }
+    );
 
-        }
-        else{
-        }
-
-    }
 }

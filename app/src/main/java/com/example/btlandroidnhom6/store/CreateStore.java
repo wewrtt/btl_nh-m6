@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -47,21 +48,17 @@ public class CreateStore extends AppCompatActivity {
                 APIService.apiService.postStore(a1).enqueue(new Callback<Respone>() {
                     @Override
                     public void onResponse(Call<Respone> call, Response<Respone> response) {
-                        LoginActivity.storeList.add(a1);
                         Intent i= new Intent();
+                        Log.e("aaa",a1.getName());
+                        i.putExtra("store",a1);
                         setResult(700,i);
                         finish();
                     }
-
                     @Override
                     public void onFailure(Call<Respone> call, Throwable t) {
                         Toast.makeText(CreateStore.this, "Server Error!!!", Toast.LENGTH_SHORT).show();
                     }
                 });
-
-
-                Intent i= new Intent(CreateStore.this, StoreHome.class);
-                startActivity(i);
             }
         });
         arrow.setOnClickListener(new View.OnClickListener() {

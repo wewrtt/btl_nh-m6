@@ -60,11 +60,9 @@ public class ListProductAdapter extends BaseAdapter {
         else viewHolder =(ListProductAdapter.ViewHolder) convertView.getTag();
 
         Picasso.get().load(listProduct.get(position).getImages()).into(viewHolder.img);
-        viewHolder.txtName.setText(listProduct.get(position).getName());
-        viewHolder.txtprice.setText(listProduct.get(position).getPrice()+"");
-        viewHolder.txtdescription.setText(listProduct.get(position).getDescription());
-
-
+        viewHolder.txtName.setText("Tên: "+listProduct.get(position).getName());
+        viewHolder.txtprice.setText("Số lượng: "+listProduct.get(position).getQuantity()+" ");
+        viewHolder.txtdescription.setText("Miêu tả: "+listProduct.get(position).getDescription());
         return convertView;
     }
 }

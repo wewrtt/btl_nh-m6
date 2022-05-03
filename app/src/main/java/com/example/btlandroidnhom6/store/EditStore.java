@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -26,7 +27,7 @@ public class EditStore extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_store);
         Intent i= this.getIntent();
-        Store a= (Store) i.getSerializableExtra("infoStore");
+        Store a= (Store) i.getExtras().get("infoStore");//(Store) i.getSerializableExtra
         EditText edt_name= findViewById(R.id.edt_name);
         EditText edt_add= findViewById(R.id.edt_add);
         EditText edt_phone= findViewById(R.id.edt_phone);
@@ -50,15 +51,18 @@ public class EditStore extends AppCompatActivity {
                 APIService.apiService.putStore(a.get_id(),a1).enqueue(new Callback<Respone>() {
                     @Override
                     public void onResponse(Call<Respone> call, Response<Respone> response) {
-                        LoginActivity.storeList.set(pos,a1);
                         Intent i= new Intent();
-                        setResult(EditStore.RESULT_OK,i);
+                        a1.set_id(a.get_id());
+                        i.putExtra("store",a1);
+                        i.putExtra("position",pos);
+                        setResult(703,i);
                         finish();
                     }
 
                     @Override
                     public void onFailure(Call<Respone> call, Throwable t) {
-                        Toast.makeText(EditStore.this, "Server Error", Toast.LENGTH_SHORT).show();
+                        Log.e("aaa",t.toString());
+                        Toast.makeText(EditStore.this, t.toString(), Toast.LENGTH_SHORT).show();
                     }
                 });
 

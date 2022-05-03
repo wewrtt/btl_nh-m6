@@ -6,6 +6,7 @@
     android:layout_height="wrap_content">
 
     <ImageView
+        android:layout_marginLeft="10dp"
         android:id="@+id/anh"
         android:layout_width="140dp"
         android:layout_height="140dp"

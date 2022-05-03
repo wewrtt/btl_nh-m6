@@ -3,7 +3,6 @@ package com.example.btlandroidnhom6.product;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -27,11 +26,11 @@ public class ProductDetail extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_product_detail);
         anhxa();
-        Product product= ProductHome.listProduct.get((Integer) this.getIntent().getExtras().get("position"));
+        Product product= ProductHome.listProduct.get((int) this.getIntent().getExtras().get("position"));
         txt_name.setText(product.getName());
         txt_code.setText(product.getCodeProduct());
         txt_price.setText(product.getPrice()+"");
-        txt_discount.setText(product.getDiscount()+"");
+        txt_discount.setText(product.getQuantity()+"");
         txt_descripton.setText(product.getDescription());
         Picasso.get().load(product.getImages()).into(imgProduct);
     }

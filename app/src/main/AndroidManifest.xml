@@ -13,13 +13,19 @@
         android:theme="@style/Theme.BtlAndroidNhom6"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".store.AddProductForStore"
+            android:exported="false" />
+        <activity
+            android:name=".product.EditProductOwner"
+            android:exported="false" />
+        <activity
             android:name=".store.EditStore"
             android:exported="false" />
         <activity
-            android:name=".thongke.thongkeChainStore"
+            android:name=".thongke.BieuDoduong"
             android:exported="false" />
         <activity
-            android:name=".thongke.thongkeStore"
+            android:name=".thongke.ThongKeCuaHang"
             android:exported="false" />
         <activity
             android:name=".product.CreateProduct"
@@ -57,12 +63,14 @@
         <activity
             android:name=".welcome.Welcom2"
             android:exported="false" />
-
         <activity
             android:name=".product.ProductDetail"
             android:exported="false" />
         <activity
             android:name=".product.EditProduct"
+            android:exported="false" />
+        <activity
+            android:name=".product.ManageProduct"
             android:exported="false" />
         <activity
             android:name=".Welcome"

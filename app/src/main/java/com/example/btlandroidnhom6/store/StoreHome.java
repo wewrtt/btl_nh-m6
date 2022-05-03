@@ -1,5 +1,9 @@
 package com.example.btlandroidnhom6.store;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -7,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -22,6 +27,7 @@ import com.example.btlandroidnhom6.model.Product;
 import com.example.btlandroidnhom6.model.Respone;
 import com.example.btlandroidnhom6.model.ResponeProduct;
 import com.example.btlandroidnhom6.model.Store;
+import com.example.btlandroidnhom6.product.ManageProduct;
 import com.example.btlandroidnhom6.product.ProductHome;
 import com.example.btlandroidnhom6.profile.ProfileHome;
 
@@ -35,7 +41,7 @@ import retrofit2.Response;
 
 public class StoreHome extends AppCompatActivity {
     private Button btn;
-    private ImageView img_profile,img_home;
+    private ImageView img_profile,img_home,img_stock;
     public static List<Store> storeList;
     private ListView listView;
     private ListviewAdapter adapter;
@@ -45,6 +51,7 @@ public class StoreHome extends AppCompatActivity {
     public void anhXa(){
         img_profile=findViewById(R.id.img_profile);
         img_home=findViewById(R.id.img_home);
+        img_stock = findViewById(R.id.img_stock);
         btn=findViewById(R.id.btn_add);
         storeList= LoginActivity.storeList;
 
@@ -66,7 +73,6 @@ public class StoreHome extends AppCompatActivity {
                     Intent i= new Intent(StoreHome.this, ProductHome.class);
                     i.putExtra("listProduct", (Serializable) productList);
                     i.putExtra("store_id",_id);
-
                     startActivity(i);
                 }
                 else {
@@ -102,9 +108,11 @@ public class StoreHome extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         Intent i = new Intent(StoreHome.this,EditStore.class);
+
                         i.putExtra("infoStore",storeList.get(position));
+                        Log.e(TAG,position+"");
                         i.putExtra("index",position);
-                        startActivityForResult(i, REQUEST_CODE_EXAMPLE);
+                        activityResultLauncher.launch(i);
                     }
                 });
                 alerb.setNegativeButton("Xóa", new DialogInterface.OnClickListener() {
@@ -142,7 +150,7 @@ public class StoreHome extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i= new Intent(StoreHome.this,CreateStore.class);
-                startActivityForResult(i, REQUEST_CODE_EXAMPLE);
+                activityResultLauncher.launch(i);
             }
         });
         img_profile.setOnClickListener(new View.OnClickListener() {
@@ -162,27 +170,68 @@ public class StoreHome extends AppCompatActivity {
         });
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode == REQUEST_CODE_EXAMPLE) {
-            // resultCode được set bởi DetailActivity
-            // RESULT_OK chỉ ra rằng kết quả này đã thành công
-            if(resultCode == EditStore.RESULT_OK) {
-             adapter.notifyDataSetChanged();
-//                Intent intent = getIntent();
-//                finish();
-//                startActivity(intent);
+//    @Override
+//    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+//        super.onActivityResult(requestCode, resultCode, data);
+//        if(requestCode == REQUEST_CODE_EXAMPLE) {
+//            // resultCode được set bởi DetailActivity
+//            // RESULT_OK chỉ ra rằng kết quả này đã thành công
+//            if(resultCode == EditStore.RESULT_OK) {
+//             adapter.notifyDataSetChanged();
+////                Intent intent = getIntent();
+////                finish();
+////                startActivity(intent);
+//            }
+//            else if(resultCode == 700){
+//                adapter.notifyDataSetChanged();
+////                Intent intent = getIntent();
+////                finish();
+////                startActivity(intent);
+//            }
+//            else {
+//                // DetailActivity không thành công, không có data trả về.
+//            }
+//        }
+//    }
+    public  List<Product> getAllProduct() {
+        APIService.apiService.getAllProduct(LoginActivity.mainUser.get_id()).enqueue(new Callback<ResponeProduct>() {
+            @Override
+            public void onResponse(Call<ResponeProduct> call, Response<ResponeProduct> response) {
+                ResponeProduct res = response.body();
+                if (res.getStatusCode() == 200) {
+                   productList = res.getData();
+                    Intent i= new Intent(StoreHome.this, ManageProduct.class);
+                    activityResultLauncher.launch(i);
+                }
             }
-            else if(resultCode == 700){
-                adapter.notifyDataSetChanged();
-//                Intent intent = getIntent();
-//                finish();
-//                startActivity(intent);
+
+            @Override
+            public void onFailure(Call<ResponeProduct> call, Throwable t) {
+
             }
-            else {
-                // DetailActivity không thành công, không có data trả về.
-            }
-        }
+        });
+        return productList;
     }
+    private ActivityResultLauncher<Intent> activityResultLauncher =  registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
+                @Override
+                public void onActivityResult(ActivityResult result) {
+                    if(result.getResultCode()==700){
+                        Intent i = result.getData();
+                        Store store = (Store) i.getExtras().get("store");
+                        Log.e(TAG,store.getName());
+                        adapter.notifyDataSetChanged();
+                    }
+                    else if(result.getResultCode()==703){
+                        Intent i = result.getData();
+
+                        int positon= (int) i.getExtras().get("position");
+                        Store store = (Store) i.getExtras().get("store");
+                        storeList.set(positon,store);
+                        adapter.notifyDataSetChanged();
+                    }
+
+                }
+            }
+    );
 }
