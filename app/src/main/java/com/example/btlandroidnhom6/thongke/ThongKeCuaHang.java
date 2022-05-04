@@ -18,7 +18,7 @@ import java.util.List;
 
 public class ThongKeCuaHang extends AppCompatActivity {
     private PieChart pieChart;
-    private List<Float> label= new ArrayList<>();
+    private List<String> label= new ArrayList<>();
     private List<Float> value= new ArrayList<>();
     private String title= "getTitle()";
     @Override
@@ -26,7 +26,7 @@ public class ThongKeCuaHang extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_thongke_store);
         pieChart = findViewById(R.id.PieChart);
-        label = (List<Float>) getIntent().getExtras().get("label");
+        label = (List<String>) getIntent().getExtras().get("label");
         value = (List<Float>) getIntent().getExtras().get("value");
         title = (String) getIntent().getExtras().get("title");
 
